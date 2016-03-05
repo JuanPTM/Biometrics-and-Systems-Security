@@ -1,5 +1,6 @@
 package Principal;
 
+
 import javax.crypto.*;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.PBEParameterSpec;
@@ -44,14 +45,14 @@ public class Principal {
             PBEKeySpec pbeKeySpec = new PBEKeySpec(pass1.toCharArray());
             PBEParameterSpec pPS = new PBEParameterSpec(salt,20);
             try {
-                SecretKeyFactory kf = SecretKeyFactory.getInstance("PBEwithMD5AndDES");
-                SecretKey sKey = kf.generateSecret((KeySpec) pbeKeySpec);
-                Cipher c = Cipher.getInstance("PBEwithMD5AndDES");
+                SecretKeyFactory kf = SecretKeyFactory.getInstance("PBEWithSHA1AndRC2_40");
+                SecretKey sKey = kf.generateSecret(pbeKeySpec);
+                Cipher c = Cipher.getInstance("PBEWithSHA1AndRC2_40");
                 c.init(Cipher.ENCRYPT_MODE,sKey,pPS);
                 FileOutputStream fos = new FileOutputStream("candado.cif");
                 FileInputStream fin = new FileInputStream("candado.png");
                 CipherOutputStream cos = new CipherOutputStream(fos,c);
-                byte[] buffer = new byte[512];
+                byte[] buffer = new byte[1024];
                 int ite;
 
 
@@ -64,6 +65,7 @@ public class Principal {
                 fin.close();
                 cos.close();
                 fos.close();
+
                 FileInputStream fin1 = new FileInputStream("candado.cif");
                 c.init(Cipher.DECRYPT_MODE,sKey,pPS);
                 CipherInputStream cin = new CipherInputStream(fin1,c);
@@ -73,6 +75,7 @@ public class Principal {
                 do{
                     fos.write(buffer,0,ite);
                     ite = cin.read(buffer);
+                    System.out.println(ite);
                 }while (ite != -1);
 
                 fos.close();
@@ -89,6 +92,6 @@ public class Principal {
         }else {
             System.out.println("Las contraseñas no coinciden.");
         }
- */
+*/
     }
 }
