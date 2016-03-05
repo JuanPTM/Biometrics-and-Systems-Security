@@ -11,23 +11,14 @@ import java.util.Scanner;
 
 /**
  * Created by JuanP on 03/03/2016
- * 
+ *
+ * @version 1.1
+ * @author Juan Pedro Torres Muñoz
  */
 public class Principal {
     public static void main(String[] args) {
         Gui g = new Gui();
-        /**
-         *
-         * Bloque para leer por consola sin mostrar lo que escribimos, puede ser util más adelante.
-         * Para ejecutar por consola -> desde fuera del paquete  "java nombrepaquete.Principal"
-         *
-         *
-         */
 
-
-        /*Console cons = System.console();
-        char[] pass = cons.readPassword("%s","Introduzca contraseña : ");
-        System.out.println(pass);*/
 /**
         //TODO implementar primeros pasos con Scanner y sin cabecera.
         byte[] salt = new byte[] { 0x7d, 0x60, 0x43, 0x5f, 0x02, (byte)0xe9, (byte)0xe0, (byte)0xae };

@@ -10,6 +10,9 @@ import java.io.File;
  *
  * Interfaz gráfica de la práctica 2 de BySS
  *
+ * @author Juan Pedro Torres Muñoz
+ * @version 1.1
+ *
  */
 public class Gui extends JFrame{
     private JPanel RootPanel;
@@ -110,7 +113,7 @@ public class Gui extends JFrame{
                 fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
                 int resp = fc.showOpenDialog(Gui.this);
 
-                if(resp == fc.APPROVE_OPTION){
+                if(resp == JFileChooser.APPROVE_OPTION){
                     File f = fc.getSelectedFile();
                     rutaDes.setText(f.getAbsolutePath());
                 }
@@ -123,20 +126,14 @@ public class Gui extends JFrame{
                 char[] pass = contraDes.getPassword();
                 String passwd = String.copyValueOf(pass);
 
-
-                System.out.println("descifrando...");
-
                 JOptionPane.showMessageDialog(RootPanel,"El proceso de descifrado ha comenzado.","Descifrando...",JOptionPane.INFORMATION_MESSAGE);
                 desactivarGUI();
-
-                // TODO: 05/03/2016 Incluir llamada a descifrador
 
                 int err;
                 PBE cif = new PBE();
                 err = cif.descifrar(passwd,algoritmoD.getSelectedItem().toString(),rutaDes.getText());
 
                 msgErr(err);
-
                 activarGUI();
 
             }
