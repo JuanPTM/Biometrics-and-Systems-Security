@@ -7,6 +7,8 @@
     </constraints>
     <properties>
       <focusTraversalPolicyProvider value="false"/>
+      <minimumSize width="400" height="200"/>
+      <preferredSize width="400" height="200"/>
     </properties>
     <border type="none"/>
     <children>

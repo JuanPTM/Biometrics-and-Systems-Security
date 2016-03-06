@@ -9,7 +9,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.security.InvalidKeyException;
 import java.security.SecureRandom;
-import java.util.Arrays;
 
 /**
  * Created by JuanP on 05/03/2016.

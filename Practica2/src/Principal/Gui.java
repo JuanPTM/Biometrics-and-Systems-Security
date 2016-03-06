@@ -1,6 +1,7 @@
 package Principal;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -11,7 +12,7 @@ import java.io.File;
  * Interfaz gráfica de la práctica 2 de BySS
  *
  * @author Juan Pedro Torres Muñoz
- * @version 2.0
+ * @version 2.1
  *
  */
 public class Gui extends JFrame{
@@ -49,6 +50,8 @@ public class Gui extends JFrame{
     private void init(){
         setContentPane(RootPanel);
         pack();
+        Dimension d= getSize();
+        setMinimumSize(d);
         setLocation(400,200);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
