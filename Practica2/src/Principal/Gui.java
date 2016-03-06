@@ -11,7 +11,7 @@ import java.io.File;
  * Interfaz gráfica de la práctica 2 de BySS
  *
  * @author Juan Pedro Torres Muñoz
- * @version 1.1
+ * @version 2.0
  *
  */
 public class Gui extends JFrame{
@@ -25,7 +25,6 @@ public class Gui extends JFrame{
     private JTextField rutaFicheroC;
     private JButton buscarButton;
     private JButton descifrarButton;
-    private JComboBox algoritmoD;
     private JTextField rutaDes;
     private JButton buscarDes;
     private JPasswordField contraDes;
@@ -36,6 +35,7 @@ public class Gui extends JFrame{
     private JPanel titPanel;
     private JPanel desPanel;
     private JPanel cifPanel;
+
 
     public Gui(){
 
@@ -56,6 +56,7 @@ public class Gui extends JFrame{
         JLabel label = new JLabel("", image, JLabel.CENTER);
         ccPanel.add(label);
     }
+
     private void addListener(){
         cifrarButton.addActionListener(new ActionListener() {
             @Override
@@ -131,7 +132,7 @@ public class Gui extends JFrame{
 
                 int err;
                 PBE cif = new PBE();
-                err = cif.descifrar(passwd,algoritmoD.getSelectedItem().toString(),rutaDes.getText());
+                err = cif.descifrar(passwd,rutaDes.getText());
 
                 msgErr(err);
                 activarGUI();
@@ -151,6 +152,12 @@ public class Gui extends JFrame{
             case 3:
                 JOptionPane.showMessageDialog(RootPanel, "Clave invalida.", "Error.", JOptionPane.ERROR_MESSAGE);
                 break;
+            case 4:
+                JOptionPane.showMessageDialog(RootPanel, "Error al leer la cabecera.", "Error.", JOptionPane.ERROR_MESSAGE);
+                break;
+            case 5:
+                JOptionPane.showMessageDialog(RootPanel, "Error al escribir la cabecera.", "Error.", JOptionPane.ERROR_MESSAGE);
+                break;
             default:
                 JOptionPane.showMessageDialog(RootPanel, "Ha ocurrido un error desconocido.", "Error.", JOptionPane.ERROR_MESSAGE);
                 break;
@@ -169,7 +176,6 @@ public class Gui extends JFrame{
         rutaFicheroC.setEnabled(false);
         buscarButton.setEnabled(false);
         contraDes.setEnabled(false);
-        algoritmoD.setEnabled(false);
         rutaDes.setEnabled(false);
         buscarDes.setEnabled(false);
         descifrarButton.setEnabled(false);
@@ -187,7 +193,6 @@ public class Gui extends JFrame{
         rutaFicheroC.setEnabled(true);
         buscarButton.setEnabled(true);
         contraDes.setEnabled(true);
-        algoritmoD.setEnabled(true);
         rutaDes.setEnabled(true);
         buscarDes.setEnabled(true);
         descifrarButton.setEnabled(true);

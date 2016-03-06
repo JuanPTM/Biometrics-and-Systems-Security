@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="practica2v1.1">
-    <output-path>$PROJECT_DIR$/out/artifacts/practica2v1_1</output-path>
-    <root id="archive" name="practica2v1.1.jar">
+  <artifact type="jar" name="practica2v2.1">
+    <output-path>$PROJECT_DIR$/out/artifacts/practica2v2_1</output-path>
+    <root id="archive" name="practica2v2.1.jar">
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
         <element id="file-copy" path="$PROJECT_DIR$/res/by-nc-sa.png" />
