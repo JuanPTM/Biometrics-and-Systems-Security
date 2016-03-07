@@ -24,7 +24,7 @@ public class Header {
     private final static byte MARKLENGTH = 10;
     private final static byte SALTLENGTH = 8;
     private final static byte HEADERLENGTH = MARKLENGTH+SALTLENGTH+1;
-    private final static String algorithms[] = {"PBEWithMD5AndDES", "PBEWithMD5AndTripleDES1",
+    private final static String algorithms[] = {"PBEWithMD5AndDES", "PBEWithMD5AndTripleDES",
             "PBEWithSHA1AndDESede", "PBEWithSHA1AndRC2_40"};
     private
     /**
