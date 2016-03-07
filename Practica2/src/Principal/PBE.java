@@ -31,7 +31,7 @@ public class PBE {
         SecureRandom random = new SecureRandom();
         salt = new byte[] { 0x7d, 0x60, 0x43, 0x5f, 0x02, (byte)0xe9, (byte)0xe0, (byte)0xae };
         random.nextBytes(salt);
-        numIte = 20; // TODO: 05/03/2016 Revisar tras preguntarle lo de numIte y lo de salt
+        numIte = 50;
         cab = new Header();
         
     }
@@ -104,7 +104,7 @@ public class PBE {
                 c.init(Cipher.ENCRYPT_MODE, sKey, pPS);
                 cos = new CipherOutputStream(fos, c);
 
-                byte[] buffer = new byte[1024]; // TODO: 05/03/2016 Revisar tras preguntarle el tamaño del buffer
+                byte[] buffer = new byte[1024];
                 int ite;
 
                 ite = fin.read(buffer);
@@ -134,7 +134,7 @@ public class PBE {
     }
 
     private int _descifrar(String pass,String rutaArchivoC){
-        byte[] buffer = new byte[1024]; // TODO: 05/03/2016 Revisar tras preguntarle el tamaño del buffer
+        byte[] buffer = new byte[1024];
         FileInputStream fin;
         FileOutputStream fos;
         String algorithm;

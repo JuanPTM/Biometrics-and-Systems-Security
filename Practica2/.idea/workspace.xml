@@ -5,7 +5,7 @@
   </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="practica2v2.2" />
+      <artifact name="practica2v2.3" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
@@ -49,14 +49,10 @@
       <file leaf-file-name="PBE.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Principal/PBE.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.70054203">
-              <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.43766937">
+              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#PBE#0;class#PBE#0" expanded="false" />
-                <element signature="method#PBE#1;class#PBE#0" expanded="false" />
-                <element signature="method#_cifrar#0;class#PBE#0" expanded="false" />
-                <element signature="method#_descifrar#0;class#PBE#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -99,9 +95,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/Header/Header.java" />
         <option value="$PROJECT_DIR$/src/Principal/Principal.java" />
-        <option value="$PROJECT_DIR$/src/Principal/PBE.java" />
         <option value="$PROJECT_DIR$/src/Principal/Gui.form" />
         <option value="$PROJECT_DIR$/src/Principal/Gui.java" />
+        <option value="$PROJECT_DIR$/src/Principal/PBE.java" />
       </list>
     </option>
   </component>
@@ -157,7 +153,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -207,33 +204,10 @@
               <option name="myItemId" value="Principal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gui" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Practica2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Practica2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Principal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -750,11 +724,12 @@
       <workItem from="1457207619067" duration="225000" />
       <workItem from="1457264904926" duration="5104000" />
       <workItem from="1457292175489" duration="609000" />
+      <workItem from="1457368152437" duration="907000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46211000" />
+    <option name="totallyTimeSpent" value="47118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -764,10 +739,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19027483" sideWeight="0.5072917" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19027483" sideWeight="0.509375" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19027483" sideWeight="0.49270833" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19027483" sideWeight="0.490625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -845,6 +820,40 @@
     <entry file="file://$PROJECT_DIR$/src/Principal/Principal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Principal/PBE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Principal/Gui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Gui#0;class#Gui#0" expanded="false" />
+            <element signature="method#init#0;class#Gui#0" expanded="false" />
+            <element signature="method#addListener#0;class#Gui#0" expanded="false" />
+            <element signature="method#msgErr#0;class#Gui#0" expanded="false" />
+            <element signature="method#desactivarGUI#0;class#Gui#0" expanded="false" />
+            <element signature="method#activarGUI#0;class#Gui#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Principal/Principal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
           <folding />
         </state>
@@ -856,10 +865,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#PBE#0;class#PBE#0" expanded="false" />
-            <element signature="method#PBE#1;class#PBE#0" expanded="false" />
-            <element signature="method#_cifrar#0;class#PBE#0" expanded="false" />
-            <element signature="method#_descifrar#0;class#PBE#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1053,14 +1058,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Principal/PBE.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70054203">
-          <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.43766937">
+          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#PBE#0;class#PBE#0" expanded="false" />
-            <element signature="method#PBE#1;class#PBE#0" expanded="false" />
-            <element signature="method#_cifrar#0;class#PBE#0" expanded="false" />
-            <element signature="method#_descifrar#0;class#PBE#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1073,12 +1074,12 @@
           <artifact-editor>
             <show-content>
               <type id="library" />
-              <type id="jpa-descriptors" />
               <type id="javaee-facet-resources" />
+              <type id="jpa-descriptors" />
               <type id="artifact" />
             </show-content>
           </artifact-editor>
-          <last-edited>practica2v2.2</last-edited>
+          <last-edited>practica2v2.3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
