@@ -29,7 +29,6 @@ public class PBE {
 
     public PBE(){
         SecureRandom random = new SecureRandom();
-        salt = new byte[] { 0x7d, 0x60, 0x43, 0x5f, 0x02, (byte)0xe9, (byte)0xe0, (byte)0xae };
         random.nextBytes(salt);
         numIte = 50;
         cab = new Header();
