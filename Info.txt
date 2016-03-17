@@ -1,0 +1,1 @@
+El proyecto es del IDE IntelliJ IDEA.

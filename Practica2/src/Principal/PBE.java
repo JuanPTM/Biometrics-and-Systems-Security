@@ -41,6 +41,7 @@ public class PBE {
      *
      * @param s Array de bytes para inicializar la semilla.
      * @param i Numero de iteraciones.
+     * @param h Clase header encargada del trabajo con la cabecera.
      */
     public PBE(byte[] s,int i,Header h){
         salt = s;
