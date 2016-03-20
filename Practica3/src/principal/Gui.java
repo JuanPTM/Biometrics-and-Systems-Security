@@ -1,6 +1,8 @@
 package principal;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -195,6 +197,28 @@ public class Gui extends JFrame {
             }
         });
 
+        TabPanel.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                updateFirmAlg();
+            }
+        });
+
+    }
+
+    private void updateFirmAlg(){
+        if (asim != null){
+            algFirm.removeAllItems();
+            String alg = asim.getPku().getAlgorithm();
+            if (alg.equals("RSA")){
+                algFirm.addItem("SHA1withRSA");
+                algFirm.addItem("MD2withRSA");
+                algFirm.addItem("MD5withRSA");
+            }
+            if (alg.equals("DSA")) {
+                algFirm.addItem("SHA1withDSA");
+            }
+        }
     }
 
     private void rellenoAlgFirm(String algoritmo){
