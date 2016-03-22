@@ -175,6 +175,7 @@ public class CriptAsim {
     private int _verificar(String path){
         byte[] buffer = new byte[1024];
         FileInputStream fis;
+        FileOutputStream fos;
 
         try {
 
@@ -194,7 +195,22 @@ public class CriptAsim {
                 fis.close();
 
                 if (dsa.verify(sig)) {
+
+                    fis = new FileInputStream(path);
+                    fos = new FileOutputStream(path.substring(0,path.length()-3)+"cla");
+                    cab.load(fis);
+
+                    ite = fis.read(buffer);
+                    do {
+                        fos.write(buffer,0,ite);
+                        ite = fis.read(buffer);
+                    } while (ite > 0);
+                    fis.close();
+                    fos.flush();
+                    fos.close();
+
                     return 4;
+
                 } else {
                     return 3;
                 }

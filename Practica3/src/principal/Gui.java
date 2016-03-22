@@ -130,7 +130,11 @@ public class Gui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                JOptionPane.showMessageDialog(RootPanel,"Clave Pública:\n"+asim.getPku().toString()+"\nClave Privada:\n"+asim.getPkr().toString(),"Clave Pública",JOptionPane.PLAIN_MESSAGE);
+                if (asim.getPku() != null) {
+                    JOptionPane.showMessageDialog(RootPanel, "Clave Pública:\n" + asim.getPku().toString() + "\nClave Privada:\n" + asim.getPkr().toString(), "Clave Pública", JOptionPane.PLAIN_MESSAGE);
+                }else{
+                    msgErr(95);
+                }
             }
         });
 
@@ -164,7 +168,7 @@ public class Gui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if (asim.getPku().getAlgorithm().equals("RSA")) {
+                if (asim.getPku()!= null && asim.getPku().getAlgorithm().equals("RSA")) {
                     int err;
 
                     desactivarGUI();
@@ -173,7 +177,10 @@ public class Gui extends JFrame {
 
                     msgErr(err);
                 }else{
-                    msgErr(96);
+                    if (asim.getPku() == null)
+                        msgErr(95);
+                    else
+                        msgErr(96);
                 }
             }
         });
@@ -182,7 +189,7 @@ public class Gui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if (asim.getPkr().getAlgorithm().equals("RSA")) {
+                if (asim.getPku()!= null && asim.getPkr().getAlgorithm().equals("RSA")) {
                     int err;
 
                     desactivarGUI();
@@ -191,7 +198,10 @@ public class Gui extends JFrame {
 
                     msgErr(err);
                 }else{
-                    msgErr(96);
+                    if (asim.getPku() == null)
+                        msgErr(95);
+                    else
+                        msgErr(96);
                 }
 
             }
@@ -207,7 +217,7 @@ public class Gui extends JFrame {
     }
 
     private void updateFirmAlg(){
-        if (asim != null){
+        if (asim != null && asim.getPku()!= null){
             algFirm.removeAllItems();
             String alg = asim.getPku().getAlgorithm();
             if (alg.equals("RSA")){
@@ -256,6 +266,9 @@ public class Gui extends JFrame {
             case 6:
                 JOptionPane.showMessageDialog(RootPanel, "Error al leer la cabecera.", "Error.", JOptionPane.ERROR_MESSAGE);
                 break;
+            case 95:
+                JOptionPane.showMessageDialog(RootPanel, "Por favor genere una llave primero.", "Error.", JOptionPane.ERROR_MESSAGE);
+                break;
             case 96:
                 JOptionPane.showMessageDialog(RootPanel, "Su llave solo puede firmar,genere unas llaves RSA para cifrar.", "Error.", JOptionPane.ERROR_MESSAGE);
                 break;
@@ -263,7 +276,7 @@ public class Gui extends JFrame {
                 JOptionPane.showMessageDialog(RootPanel, "No se ha podido guardar el resultado.", "Error.", JOptionPane.ERROR_MESSAGE);
                 break;
             case 98:
-                JOptionPane.showMessageDialog(RootPanel, "La llave no es válida.", "Error.", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(RootPanel, "La llave no es válida o no tiene llaves.", "Error.", JOptionPane.ERROR_MESSAGE);
                 break;
             default:
                 JOptionPane.showMessageDialog(RootPanel, "Error inesperado.", "Error.", JOptionPane.ERROR_MESSAGE);
