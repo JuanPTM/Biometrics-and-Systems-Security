@@ -8,14 +8,13 @@ import java.io.File;
 
 /**
  * Created by JuanP on 04/03/2016.
- *
+ * <p>
  * Interfaz gráfica de la práctica 2 de BySS
  *
  * @author Juan Pedro Torres Muñoz
  * @version 2.1
- *
  */
-public class Gui extends JFrame{
+public class Gui extends JFrame {
     private JPanel RootPanel;
     private JTabbedPane tab;
     private JPasswordField contraText;
@@ -38,7 +37,7 @@ public class Gui extends JFrame{
     private JPanel cifPanel;
 
 
-    public Gui(){
+    public Gui() {
 
         super("Práctica 2");
         init();
@@ -47,12 +46,12 @@ public class Gui extends JFrame{
         setVisible(true);
     }
 
-    private void init(){
+    private void init() {
         setContentPane(RootPanel);
         pack();
-        Dimension d= getSize();
+        Dimension d = getSize();
         setMinimumSize(d);
-        setLocation(400,200);
+        setLocation(400, 200);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         ImageIcon image = new ImageIcon(this.getClass().getResource("/res/by-nc-sa.png"));
@@ -60,41 +59,48 @@ public class Gui extends JFrame{
         ccPanel.add(label);
     }
 
-    private void addListener(){
+    private void addListener() {
         cifrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                char[] contra = contraText.getPassword();
-                char[] contraR = contraRepe.getPassword();
-                String contraS1 = String.copyValueOf(contra);
-                String contraR1 = String.copyValueOf(contraR);
-                if (contraS1.equals(contraR1) && !contraS1.isEmpty()){
 
-                    JOptionPane.showMessageDialog(RootPanel,"El proceso de cifrado ha comenzado.","Cifrando...",JOptionPane.INFORMATION_MESSAGE);
-                    desactivarGUI();
+                if (!rutaFicheroC.getText().equals("")) {
+                    char[] contra = contraText.getPassword();
+                    char[] contraR = contraRepe.getPassword();
+                    String contraS1 = String.copyValueOf(contra);
+                    String contraR1 = String.copyValueOf(contraR);
+                    if (contraS1.equals(contraR1) && !contraS1.isEmpty()) {
 
-                    int err;
-                    PBE cif = new PBE();
-                    err = cif.cifrar(contraS1,algoritmo.getSelectedItem().toString(),rutaFicheroC.getText());
+                        JOptionPane.showMessageDialog(RootPanel, "El proceso de cifrado ha comenzado.", "Cifrando...", JOptionPane.INFORMATION_MESSAGE);
+                        desactivarGUI();
 
-                    msgErr(err);
-                    activarGUI();
-                }else{
-                    JOptionPane.showMessageDialog(RootPanel,"Las contraseñas son diferentes o estan vacías.","Error",JOptionPane.ERROR_MESSAGE);
+                        int err;
+                        PBE cif = new PBE();
+                        err = cif.cifrar(contraS1, algoritmo.getSelectedItem().toString(), rutaFicheroC.getText());
+
+                        msgErr(err);
+                        activarGUI();
+                    } else {
+                        msgErr(6);
+                    }
+                } else {
+                    msgErr(7);
                 }
+
             }
         });
         mostrarCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                char cMostrar= '•';
-                if(mostrarCheckBox.isSelected()){
-                    contraText.setEchoChar((char)0);
-                }else{
+                char cMostrar = '•';
+                if (mostrarCheckBox.isSelected()) {
+                    contraText.setEchoChar((char) 0);
+                } else {
                     contraText.setEchoChar(cMostrar);
                 }
             }
         });
+
         buscarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -102,7 +108,7 @@ public class Gui extends JFrame{
                 fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
                 int resp = fc.showOpenDialog(Gui.this);
 
-                if(resp == JFileChooser.APPROVE_OPTION){
+                if (resp == JFileChooser.APPROVE_OPTION) {
                     File f = fc.getSelectedFile();
                     rutaFicheroC.setText(f.getAbsolutePath());
                 }
@@ -117,7 +123,7 @@ public class Gui extends JFrame{
                 fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
                 int resp = fc.showOpenDialog(Gui.this);
 
-                if(resp == JFileChooser.APPROVE_OPTION){
+                if (resp == JFileChooser.APPROVE_OPTION) {
                     File f = fc.getSelectedFile();
                     rutaDes.setText(f.getAbsolutePath());
                 }
@@ -127,25 +133,33 @@ public class Gui extends JFrame{
         descifrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                char[] pass = contraDes.getPassword();
-                String passwd = String.copyValueOf(pass);
 
-                JOptionPane.showMessageDialog(RootPanel,"El proceso de descifrado ha comenzado.","Descifrando...",JOptionPane.INFORMATION_MESSAGE);
-                desactivarGUI();
+                if (!rutaDes.getText().equals("")) {
+                    char[] pass = contraDes.getPassword();
+                    String passwd = String.copyValueOf(pass);
 
-                int err;
-                PBE cif = new PBE();
-                err = cif.descifrar(passwd,rutaDes.getText());
+                    if(!passwd.equals("")) {
+                        JOptionPane.showMessageDialog(RootPanel, "El proceso de descifrado ha comenzado.", "Descifrando...", JOptionPane.INFORMATION_MESSAGE);
+                        desactivarGUI();
 
-                msgErr(err);
-                activarGUI();
+                        int err;
+                        PBE cif = new PBE();
+                        err = cif.descifrar(passwd, rutaDes.getText());
 
+                        msgErr(err);
+                        activarGUI();
+                    }else{
+                        msgErr(8);
+                    }
+                } else {
+                    msgErr(7);
+                }
             }
         });
     }
 
-    private void msgErr(int err){
-        switch (err){
+    private void msgErr(int err) {
+        switch (err) {
             case 0:
                 JOptionPane.showMessageDialog(RootPanel, "El proceso ha finalizado correctamente.", "Proceso finalizado.", JOptionPane.INFORMATION_MESSAGE);
                 break;
@@ -161,13 +175,25 @@ public class Gui extends JFrame{
             case 5:
                 JOptionPane.showMessageDialog(RootPanel, "Error al escribir la cabecera.", "Error.", JOptionPane.ERROR_MESSAGE);
                 break;
+            case 6:
+                JOptionPane.showMessageDialog(RootPanel, "Las contraseñas son diferentes o estan vacías.", "Error", JOptionPane.ERROR_MESSAGE);
+                break;
+            case 7:
+                JOptionPane.showMessageDialog(RootPanel, "Introduzca la ruta del fichero.", "Error.", JOptionPane.ERROR_MESSAGE);
+                break;
+            case 8:
+                JOptionPane.showMessageDialog(RootPanel, "Introduzca una contraseña.", "Error.", JOptionPane.ERROR_MESSAGE);
+                break;
+            case 9:
+                JOptionPane.showMessageDialog(RootPanel, "Contraseña incorrecta.", "Error.", JOptionPane.ERROR_MESSAGE);
+                break;
             default:
                 JOptionPane.showMessageDialog(RootPanel, "Ha ocurrido un error desconocido.", "Error.", JOptionPane.ERROR_MESSAGE);
                 break;
         }
     }
 
-    private void desactivarGUI(){
+    private void desactivarGUI() {
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         cifrarButton.setEnabled(false);
         tab.setEnabled(false);
@@ -184,7 +210,7 @@ public class Gui extends JFrame{
         descifrarButton.setEnabled(false);
     }
 
-    private void activarGUI(){
+    private void activarGUI() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         cifrarButton.setEnabled(true);
         tab.setEnabled(true);

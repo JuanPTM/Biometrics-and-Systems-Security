@@ -310,7 +310,7 @@ public class CriptAsim {
         } catch (NoSuchAlgorithmException e) {
             return 1;
         } catch (NoSuchPaddingException e) {
-            return 99;
+            return 98;
         } catch (InvalidKeyException e) {
             return 98;
         } catch (IOException e) {
@@ -318,7 +318,7 @@ public class CriptAsim {
         } catch (IllegalBlockSizeException e) {
             return 99;
         } catch (BadPaddingException e) {
-            return 99;
+            return 98;
         }
 
     }

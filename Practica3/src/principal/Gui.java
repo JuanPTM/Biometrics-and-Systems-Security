@@ -13,7 +13,6 @@ import java.io.File;
  *
  * @author Juan Pedro Torres Muñoz
  * @version 1.0
- *
  */
 public class Gui extends JFrame {
     private JTabbedPane TabPanel;
@@ -53,7 +52,6 @@ public class Gui extends JFrame {
     /***
      * Constructor por defecto de la Interfaz Gráfica.
      * Inicializa la interfaz y crea los listener.
-     *
      */
     public Gui() {
         super("Práctica 3");
@@ -63,12 +61,12 @@ public class Gui extends JFrame {
         setVisible(true);
     }
 
-    private void init(){
+    private void init() {
         setContentPane(RootPanel);
         pack();
-        Dimension d= getSize();
+        Dimension d = getSize();
         setMinimumSize(d);
-        setLocation(400,200);
+        setLocation(400, 200);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         ImageIcon image = new ImageIcon(this.getClass().getResource("/res/by-nc-sa.png"));
@@ -76,7 +74,7 @@ public class Gui extends JFrame {
         ccPanel.add(label);
     }
 
-    private void addListener(){
+    private void addListener() {
 
         buscarButton.addActionListener(new ActionListener() {
             @Override
@@ -85,7 +83,7 @@ public class Gui extends JFrame {
                 fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
                 int resp = fc.showOpenDialog(Gui.this);
 
-                if(resp == JFileChooser.APPROVE_OPTION){
+                if (resp == JFileChooser.APPROVE_OPTION) {
                     File f = fc.getSelectedFile();
                     ruta.setText(f.getAbsolutePath());
                 }
@@ -100,7 +98,7 @@ public class Gui extends JFrame {
                 fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 
 
-                if(resp == JFileChooser.APPROVE_OPTION){
+                if (resp == JFileChooser.APPROVE_OPTION) {
                     File f = fc.getSelectedFile();
                     rutaFir.setText(f.getAbsolutePath());
                 }
@@ -132,7 +130,7 @@ public class Gui extends JFrame {
 
                 if (asim.getPku() != null) {
                     JOptionPane.showMessageDialog(RootPanel, "Clave Pública:\n" + asim.getPku().toString() + "\nClave Privada:\n" + asim.getPkr().toString(), "Clave Pública", JOptionPane.PLAIN_MESSAGE);
-                }else{
+                } else {
                     msgErr(95);
                 }
             }
@@ -141,26 +139,44 @@ public class Gui extends JFrame {
         firmarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int err;
+                if (asim.getPku() != null) {
 
-                desactivarGUI();
-                err = asim.firmar(algFirm.getSelectedItem().toString(),rutaFir.getText());
-                activarGUI();
+                    int err;
 
-                msgErr(err);
+                    if (!rutaFir.getText().equals("")) {
+                        desactivarGUI();
+                        err = asim.firmar(algFirm.getSelectedItem().toString(), rutaFir.getText());
+                        activarGUI();
+                    } else {
+                        err = 7;
+                    }
+                    msgErr(err);
+                } else {
+                    msgErr(95);
+                }
+
             }
         });
 
         verificarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int err;
 
-                desactivarGUI();
-                err = asim.verificar(rutaFir.getText());
-                activarGUI();
+                if (asim.getPku() != null) {
+                    int err;
 
-                msgErr(err);
+                    if (!rutaFir.getText().equals("")) {
+                        desactivarGUI();
+                        err = asim.verificar(rutaFir.getText());
+                        activarGUI();
+                    } else {
+                        err = 7;
+                    }
+
+                    msgErr(err);
+                } else {
+                    msgErr(95);
+                }
             }
         });
 
@@ -168,15 +184,18 @@ public class Gui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if (asim.getPku()!= null && asim.getPku().getAlgorithm().equals("RSA")) {
+                if (asim.getPku() != null && asim.getPku().getAlgorithm().equals("RSA")) {
                     int err;
 
-                    desactivarGUI();
-                    err = asim.cifrar(ruta.getText());
-                    activarGUI();
-
+                    if (!ruta.getText().equals("")) {
+                        desactivarGUI();
+                        err = asim.cifrar(ruta.getText());
+                        activarGUI();
+                    } else {
+                        err = 7;
+                    }
                     msgErr(err);
-                }else{
+                } else {
                     if (asim.getPku() == null)
                         msgErr(95);
                     else
@@ -189,15 +208,18 @@ public class Gui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if (asim.getPku()!= null && asim.getPkr().getAlgorithm().equals("RSA")) {
+                if (asim.getPku() != null && asim.getPkr().getAlgorithm().equals("RSA")) {
                     int err;
 
-                    desactivarGUI();
-                    err = asim.descifrar(ruta.getText());
-                    activarGUI();
-
+                    if (!ruta.getText().equals("")) {
+                        desactivarGUI();
+                        err = asim.descifrar(ruta.getText());
+                        activarGUI();
+                    } else {
+                        err = 7;
+                    }
                     msgErr(err);
-                }else{
+                } else {
                     if (asim.getPku() == null)
                         msgErr(95);
                     else
@@ -216,11 +238,11 @@ public class Gui extends JFrame {
 
     }
 
-    private void updateFirmAlg(){
-        if (asim != null && asim.getPku()!= null){
+    private void updateFirmAlg() {
+        if (asim != null && asim.getPku() != null) {
             algFirm.removeAllItems();
             String alg = asim.getPku().getAlgorithm();
-            if (alg.equals("RSA")){
+            if (alg.equals("RSA")) {
                 algFirm.addItem("SHA1withRSA");
                 algFirm.addItem("MD2withRSA");
                 algFirm.addItem("MD5withRSA");
@@ -231,9 +253,9 @@ public class Gui extends JFrame {
         }
     }
 
-    private void rellenoAlgFirm(String algoritmo){
+    private void rellenoAlgFirm(String algoritmo) {
         algFirm.removeAllItems();
-        if (algoritmo.equals("RSA")){
+        if (algoritmo.equals("RSA")) {
             algFirm.addItem("SHA1withRSA");
             algFirm.addItem("MD2withRSA");
             algFirm.addItem("MD5withRSA");
@@ -243,8 +265,8 @@ public class Gui extends JFrame {
         }
     }
 
-    private void msgErr(int err){
-        switch (err){
+    private void msgErr(int err) {
+        switch (err) {
             case 0:
                 JOptionPane.showMessageDialog(RootPanel, "El proceso ha finalizado correctamente.", "Proceso finalizado.", JOptionPane.INFORMATION_MESSAGE);
                 break;
@@ -266,6 +288,9 @@ public class Gui extends JFrame {
             case 6:
                 JOptionPane.showMessageDialog(RootPanel, "Error al leer la cabecera.", "Error.", JOptionPane.ERROR_MESSAGE);
                 break;
+            case 7:
+                JOptionPane.showMessageDialog(RootPanel, "Introduzca la ruta del fichero.", "Error.", JOptionPane.ERROR_MESSAGE);
+                break;
             case 95:
                 JOptionPane.showMessageDialog(RootPanel, "Por favor genere una llave primero.", "Error.", JOptionPane.ERROR_MESSAGE);
                 break;
@@ -284,7 +309,7 @@ public class Gui extends JFrame {
         }
     }
 
-    private void desactivarGUI(){
+    private void desactivarGUI() {
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         cifrarButton.setEnabled(false);
         TabPanel.setEnabled(false);
@@ -300,7 +325,7 @@ public class Gui extends JFrame {
 
     }
 
-    private void activarGUI(){
+    private void activarGUI() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         cifrarButton.setEnabled(true);
         TabPanel.setEnabled(true);

@@ -1,23 +1,27 @@
 package Principal;
 
 import Header.Header;
+
 import javax.crypto.*;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.PBEParameterSpec;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.security.spec.InvalidKeySpecException;
 
 /**
  * Created by JuanP on 05/03/2016.
- *
+ * <p>
  * Clase encargada del cifrado y descifrado.
  *
- * @version 2.1
  * @author Juan Pedro Torres Muñoz
- *
+ * @version 2.1
  */
 
 
@@ -27,57 +31,55 @@ public class PBE {
     private Header cab;
 
 
-    public PBE(){
+    public PBE() {
         SecureRandom random = new SecureRandom();
+        salt = new byte[8];
         random.nextBytes(salt);
         numIte = 50;
         cab = new Header();
-        
+
     }
 
     /***
-     *
      * Constructor parametrizado de la clase PBE
      *
      * @param s Array de bytes para inicializar la semilla.
      * @param i Numero de iteraciones.
      * @param h Clase header encargada del trabajo con la cabecera.
      */
-    public PBE(byte[] s,int i,Header h){
+    public PBE(byte[] s, int i, Header h) {
         salt = s;
         numIte = i;
         cab = h;
     }
 
     /***
-     *
      * Metodo encargado de cifrar con las caracteristicas pedidas.
      *
-     * @param pass Frase de paso con la que se cifrará el archivo.
-     * @param algorithm Algoritmo utilizado para cifrar el archivo.
+     * @param pass        Frase de paso con la que se cifrará el archivo.
+     * @param algorithm   Algoritmo utilizado para cifrar el archivo.
      * @param rutaArchivo Ruta del archivo a cifrar.
      * @return Retornará 0 en caso de que no sucedan errores, 2 si no existe el archivo indicado, 3 si la clave es invalida,
-     *         5 en caso de no poder escribir la cabecera y 99 si es un error desconocido.
+     * 5 en caso de no poder escribir la cabecera y 99 si es un error desconocido.
      */
-    public int cifrar(String pass,String algorithm,String rutaArchivo){
-        return _cifrar(pass,algorithm,rutaArchivo);
+    public int cifrar(String pass, String algorithm, String rutaArchivo) {
+        return _cifrar(pass, algorithm, rutaArchivo);
     }
 
 
     /***
-     *
      * Metodo encargado de descifrar un archivo con los datos proporcionados.
      *
-     * @param pass Frase de paso con la que se descifrará el archivo.
+     * @param pass         Frase de paso con la que se descifrará el archivo.
      * @param rutaArchivoC Ruta del archivo a descifrar.
      * @return Retornará 0 en caso de que no sucedan errores, 2 si no existe el archivo indicado, 3 si la clave es invalida,
-     *         4 en caso de no reconocer la cabecera del archivo cifrad y 99 si es un error desconocido.
+     * 4 en caso de no reconocer la cabecera del archivo cifrad y 99 si es un error desconocido.
      */
-    public int descifrar(String pass,String rutaArchivoC){
-        return _descifrar(pass,rutaArchivoC);
+    public int descifrar(String pass, String rutaArchivoC) {
+        return _descifrar(pass, rutaArchivoC);
     }
 
-    private int _cifrar(String pass,String algorithm,String rutaArchivo) {
+    private int _cifrar(String pass, String algorithm, String rutaArchivo) {
         FileInputStream fin;
         FileOutputStream fos;
         CipherOutputStream cos;
@@ -94,7 +96,7 @@ public class PBE {
             fin = new FileInputStream(rutaArchivo);
             fos = new FileOutputStream(rutaFinal);
 
-            if(cab.save(fos)) {
+            if (cab.save(fos)) {
 
                 PBEKeySpec pbeKeySpec = new PBEKeySpec(pass.toCharArray());
                 PBEParameterSpec pPS = new PBEParameterSpec(salt, numIte);
@@ -118,30 +120,31 @@ public class PBE {
                 fin.close();
                 cos.close();
                 fos.close();
-            }else {
+            } else {
                 return 5;
             }
 
         } catch (FileNotFoundException e) {
             return 2;
-        }catch(InvalidKeyException e){
+        } catch (InvalidKeyException e) {
             return 3;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return 99;
         }
         return 0;
     }
 
-    private int _descifrar(String pass,String rutaArchivoC){
+    private int _descifrar(String pass, String rutaArchivoC) {
         byte[] buffer = new byte[1024];
         FileInputStream fin;
         FileOutputStream fos;
         String algorithm;
 
+
         try {
             fin = new FileInputStream(rutaArchivoC);
-            if(cab.load(fin)) {
+            if (cab.load(fin)) {
 
                 /**
                  * Redundante en caso base - Necesario si cambia el salt al cifrar.
@@ -174,17 +177,25 @@ public class PBE {
                 cin.close();
                 fos.close();
                 fin.close();
-            }else{
+            } else {
                 return 4;
             }
-        }catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             return 2;
-        }catch (InvalidKeyException e){
+        } catch (InvalidKeyException e) {
             return 3;
-        }catch (Exception e){
-            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
             return 99;
+        } catch (InvalidKeySpecException e) {
+            return 9;
+        } catch (NoSuchPaddingException e) {
+            return 9;
+        } catch (InvalidAlgorithmParameterException e) {
+            return 99;
+        } catch (IOException e) {
+            return 9;
         }
+
         return 0;
     }
 }
