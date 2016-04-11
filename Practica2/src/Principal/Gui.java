@@ -12,7 +12,7 @@ import java.io.File;
  * Interfaz gráfica de la práctica 2 de BySS
  *
  * @author Juan Pedro Torres Muñoz
- * @version 2.1
+ * @version 3
  */
 public class Gui extends JFrame {
     private JPanel RootPanel;
@@ -186,6 +186,9 @@ public class Gui extends JFrame {
                 break;
             case 9:
                 JOptionPane.showMessageDialog(RootPanel, "Contraseña incorrecta.", "Error.", JOptionPane.ERROR_MESSAGE);
+                break;
+            case 10:
+                JOptionPane.showMessageDialog(RootPanel, "El fichero no es valido.", "Error.", JOptionPane.ERROR_MESSAGE);
                 break;
             default:
                 JOptionPane.showMessageDialog(RootPanel, "Ha ocurrido un error desconocido.", "Error.", JOptionPane.ERROR_MESSAGE);

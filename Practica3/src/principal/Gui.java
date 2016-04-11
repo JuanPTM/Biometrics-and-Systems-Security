@@ -12,7 +12,7 @@ import java.io.File;
  * Created by JuanP on 20/03/2016.
  *
  * @author Juan Pedro Torres Muñoz
- * @version 1.0
+ * @version 2.6
  */
 public class Gui extends JFrame {
     private JTabbedPane TabPanel;
@@ -290,6 +290,9 @@ public class Gui extends JFrame {
                 break;
             case 7:
                 JOptionPane.showMessageDialog(RootPanel, "Introduzca la ruta del fichero.", "Error.", JOptionPane.ERROR_MESSAGE);
+                break;
+            case 8:
+                JOptionPane.showMessageDialog(RootPanel, "El fichero no es valido.", "Error.", JOptionPane.ERROR_MESSAGE);
                 break;
             case 95:
                 JOptionPane.showMessageDialog(RootPanel, "Por favor genere una llave primero.", "Error.", JOptionPane.ERROR_MESSAGE);

@@ -18,7 +18,7 @@ import java.security.spec.X509EncodedKeySpec;
  * Clase encargada del cifrado,descifrado,firma y verificación.
  *
  * @author Juan Pedro Torres Muñoz
- * @version 2.0
+ * @version 2.6
  *
  */
 public class CriptAsim {
@@ -177,6 +177,10 @@ public class CriptAsim {
         FileInputStream fis;
         FileOutputStream fos;
 
+        if(!path.substring(path.length()-3,path.length()).equals("fir")){
+            return 8;
+        }
+
         try {
 
             fis = new FileInputStream(path);
@@ -281,6 +285,10 @@ public class CriptAsim {
         FileOutputStream foc;
         FileInputStream fis;
         byte[] out;
+
+        if(!path.substring(path.length()-3,path.length()).equals("cif")){
+            return 8;
+        }
 
         try {
             fis = new FileInputStream(path);

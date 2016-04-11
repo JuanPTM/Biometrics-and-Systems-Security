@@ -21,7 +21,7 @@ import java.security.spec.InvalidKeySpecException;
  * Clase encargada del cifrado y descifrado.
  *
  * @author Juan Pedro Torres Muñoz
- * @version 2.1
+ * @version 3
  */
 
 
@@ -73,7 +73,8 @@ public class PBE {
      * @param pass         Frase de paso con la que se descifrará el archivo.
      * @param rutaArchivoC Ruta del archivo a descifrar.
      * @return Retornará 0 en caso de que no sucedan errores, 2 si no existe el archivo indicado, 3 si la clave es invalida,
-     * 4 en caso de no reconocer la cabecera del archivo cifrad y 99 si es un error desconocido.
+     * 4 en caso de no reconocer la cabecera del archivo cifrado, 9 si encuentra problemas con el padding,10 si el fichero no es valido
+     * y 99 si es un error desconocido.
      */
     public int descifrar(String pass, String rutaArchivoC) {
         return _descifrar(pass, rutaArchivoC);
@@ -141,6 +142,9 @@ public class PBE {
         FileOutputStream fos;
         String algorithm;
 
+        if(!rutaArchivoC.substring(rutaArchivoC.length()-3,rutaArchivoC.length()).equals("fir")){
+            return 10;
+        }
 
         try {
             fin = new FileInputStream(rutaArchivoC);
