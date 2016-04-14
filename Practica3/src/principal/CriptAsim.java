@@ -14,12 +14,11 @@ import java.security.spec.X509EncodedKeySpec;
 
 /**
  * Created by JuanP on 20/03/2016.
- *
+ * <p>
  * Clase encargada del cifrado,descifrado,firma y verificación.
  *
  * @author Juan Pedro Torres Muñoz
- * @version 2.6
- *
+ * @version 3
  */
 public class CriptAsim {
     private static CriptAsim asim = null;
@@ -30,14 +29,14 @@ public class CriptAsim {
     private CriptAsim() {
         cab = new Header();
         int err = loadKeyPair("RSA");
-        if (err == 3){
+        if (err == 3) {
             loadKeyPair("DSA");
         }
     }
 
-    private int loadKeyPair(String algorithm){
-        byte[] encodedPublicKey ;
-        byte[] encodedPrivateKey ;
+    private int loadKeyPair(String algorithm) {
+        byte[] encodedPublicKey;
+        byte[] encodedPrivateKey;
 
         try {
             // Read Public Key.
@@ -73,7 +72,7 @@ public class CriptAsim {
         return 0;
     }
 
-    public void saveKeyPair(KeyPair keyPair){
+    public void saveKeyPair(KeyPair keyPair) {
         PrivateKey privateKey = keyPair.getPrivate();
         PublicKey publicKey = keyPair.getPublic();
 
@@ -102,7 +101,7 @@ public class CriptAsim {
         this.cab = cab;
     }
 
-    private int generarClaves(String algCif){
+    private int generarClaves(String algCif) {
         try {
             KeyPairGenerator kpg = KeyPairGenerator.getInstance(algCif);
             kpg.initialize(512);
@@ -120,11 +119,11 @@ public class CriptAsim {
         }
     }
 
-    private int _firmar(String algorithm,String path) {
+    private int _firmar(String algorithm, String path) {
         byte[] buffer = new byte[1024];
         FileInputStream fis;
         FileOutputStream fos;
-        String sPath = path.substring(0,path.length()-3)+"fir";
+        String sPath = path.substring(0, path.length() - 3) + "fir";
 
         try {
             fis = new FileInputStream(path);
@@ -135,23 +134,23 @@ public class CriptAsim {
             int ite;
             ite = fis.read(buffer);
             do {
-                dsa.update(buffer,0,ite);
+                dsa.update(buffer, 0, ite);
                 ite = fis.read(buffer);
-            }while(ite > 0);
+            } while (ite > 0);
 
             byte[] sig = dsa.sign();
 
             fos = new FileOutputStream(sPath);
-            cab = new Header(algorithm,sig);
+            cab = new Header(algorithm, sig);
             cab.save(fos);
             fis.close();
             fis = new FileInputStream(path);
 
             ite = fis.read(buffer);
-            do{
-               fos.write(buffer,0,ite);
-               ite = fis.read(buffer);
-            }while (ite > 0);
+            do {
+                fos.write(buffer, 0, ite);
+                ite = fis.read(buffer);
+            } while (ite > 0);
 
             fos.flush();
             fos.close();
@@ -159,7 +158,7 @@ public class CriptAsim {
 
             return 0;
 
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             return 2;
         } catch (NoSuchAlgorithmException e) {
             return 1;
@@ -172,19 +171,15 @@ public class CriptAsim {
         }
     }
 
-    private int _verificar(String path){
+    private int _verificar(String path) {
         byte[] buffer = new byte[1024];
         FileInputStream fis;
         FileOutputStream fos;
 
-        if(!path.substring(path.length()-3,path.length()).equals("fir")){
-            return 8;
-        }
-
         try {
 
             fis = new FileInputStream(path);
-            if(cab.load(fis)) {
+            if (cab.load(fis)) {
                 byte[] sig = cab.getSign();
                 Signature dsa = Signature.getInstance(cab.getSigner());
                 dsa.initVerify(pku);
@@ -193,7 +188,7 @@ public class CriptAsim {
                 int ite;
                 ite = fis.read(buffer);
                 do {
-                    dsa.update(buffer,0,ite);
+                    dsa.update(buffer, 0, ite);
                     ite = fis.read(buffer);
                 } while (ite > 0);
                 fis.close();
@@ -201,12 +196,12 @@ public class CriptAsim {
                 if (dsa.verify(sig)) {
 
                     fis = new FileInputStream(path);
-                    fos = new FileOutputStream(path.substring(0,path.length()-3)+"cla");
+                    fos = new FileOutputStream(path.substring(0, path.length() - 3) + "cla");
                     cab.load(fis);
 
                     ite = fis.read(buffer);
                     do {
-                        fos.write(buffer,0,ite);
+                        fos.write(buffer, 0, ite);
                         ite = fis.read(buffer);
                     } while (ite > 0);
                     fis.close();
@@ -218,7 +213,7 @@ public class CriptAsim {
                 } else {
                     return 3;
                 }
-            }else{
+            } else {
                 return 6;
             }
         } catch (IOException e) {
@@ -234,8 +229,8 @@ public class CriptAsim {
 
     }
 
-    private int _cifrar(String path){
-        String oPath = path.substring(0,path.length()-3) + "cif";
+    private int _cifrar(String path) {
+        String oPath = path.substring(0, path.length() - 3) + "cif";
         FileOutputStream foc;
         FileInputStream fis;
         byte[] out;
@@ -247,17 +242,17 @@ public class CriptAsim {
             cab.save(foc);
 
             Cipher c = Cipher.getInstance("RSA/ECB/PKCS1Padding");
-            c.init(c.ENCRYPT_MODE,pku);
+            c.init(c.ENCRYPT_MODE, pku);
             int blockSize = 53;
             byte[] buffer = new byte[blockSize];
 
             int ite;
             ite = fis.read(buffer);
-            do{
-                out = c.doFinal(buffer,0,ite);
+            do {
+                out = c.doFinal(buffer, 0, ite);
                 foc.write(out);
                 ite = fis.read(buffer);
-            }while (ite > 0);
+            } while (ite > 0);
 
             fis.close();
             foc.flush();
@@ -270,7 +265,7 @@ public class CriptAsim {
         } catch (InvalidKeyException e) {
             return 98;
         } catch (IOException e) {
-            return 97;
+            return 2;
         } catch (IllegalBlockSizeException e) {
             return 99;
         } catch (BadPaddingException e) {
@@ -280,15 +275,11 @@ public class CriptAsim {
 
     }
 
-    private int _descifrar(String path){
-        String oPath = path.substring(0,path.length()-3) + "cla";
+    private int _descifrar(String path) {
+        String oPath = path.substring(0, path.length() - 3) + "cla";
         FileOutputStream foc;
         FileInputStream fis;
         byte[] out;
-
-        if(!path.substring(path.length()-3,path.length()).equals("cif")){
-            return 8;
-        }
 
         try {
             fis = new FileInputStream(path);
@@ -335,13 +326,26 @@ public class CriptAsim {
      * Método encargado de firmar el fichero, dejando una cabecera con la firma y el contenido tras ella.
      *
      * @param algorithm algoritmo de firma seleccionado.
-     * @param path ubicación del fichero a firmar.
+     * @param path      ubicación del fichero a firmar.
      * @return Valor de control, 2 si no existe el fichero, 1 si no exite el algoritmo,98 si la clave no es valida,
-     *          5 si se produce una excepcion en la firma,97 si no puede crear el fichero de salida
-     *          y 0 si funciona correctamente.
+     * 5 si se produce una excepcion en la firma,97 si no puede crear el fichero de salida,95 si no existe una llave,
+     * 8 si el fichero no es valido, 7 si el path no es valido  y 0 si funciona correctamente.
      */
-    public int firmar(String algorithm,String path){
-        return _firmar(algorithm,path);
+    public int firmar(String algorithm, String path) {
+
+        if (asim.getPku() != null) {
+            if (path.substring(path.length() - 3, path.length()).equals("fir")) {
+                return 8;
+            }
+            if (!path.equals("")) {
+                return _firmar(algorithm, path);
+            } else {
+                return 7;
+            }
+        } else {
+            return 95;
+        }
+
     }
 
     /***
@@ -350,7 +354,7 @@ public class CriptAsim {
      * @param algCif algoritmo para el que se quieren generar llaves(RSA o DSA).
      * @return Valor de control, 1 si no existe el algoritmo y 0 si no hay problemas.
      */
-    public int genClaves(String algCif){
+    public int genClaves(String algCif) {
         return generarClaves(algCif);
     }
 
@@ -359,11 +363,25 @@ public class CriptAsim {
      *
      * @param path Ubicación del fichero que contiene la firma.
      * @return Valor de control, 4 si la firma es correcta,3 si la firma no es correcta,2 si no se puedo escribir el fichero de salida,
-     *          1 si no existe el algoritmo, 98 si la clave es invalida y 5 si se produce un error en la verificación,
-     *          6 si la cabecera no corresponde a nuestro programa.
+     * 1 si no existe el algoritmo, 98 si la clave es invalida, 5 si se produce un error en la verificación,
+     * 6 si la cabecera no corresponde a nuestro programa,95 si no existe una llave, 7 si el path no es valido y 8 si el fichero no es valido.
      */
-    public int verificar(String path){
-        return _verificar(path);
+    public int verificar(String path) {
+
+        if (asim.getPku() != null) {
+            if (!path.substring(path.length() - 3, path.length()).equals("fir")) {
+                return 8;
+            }
+            if (!path.equals("")) {
+                return _verificar(path);
+            } else {
+                return 7;
+            }
+        } else {
+            return 95;
+        }
+
+
     }
 
     /***
@@ -371,10 +389,27 @@ public class CriptAsim {
      *
      * @param path Ubicación del fichero a cifrar
      * @return valor de control, 0 si se realizó correctamente, 1 si no existe el algoritmo, 97 si hubiera un error de i/o,
-     *          98 si la clave no es valida, 99 si se produce un error en el cifrado.
+     * 98 si la clave no es valida, 99 si se produce un error en el cifrado, 7 si el fichero no es válido, 95 si no hay llave,
+     * 8 si el fichero no es valido y 96 si la llave no puede cifrar.
      */
-    public int cifrar(String path){
-        return _cifrar(path);
+    public int cifrar(String path) {
+
+        if (asim.getPku() != null && asim.getPku().getAlgorithm().equals("RSA")) {
+            if (path.substring(path.length() - 3, path.length()).equals("cif")) {
+                return 8;
+            }
+            if (!path.equals("")) {
+                return _cifrar(path);
+            } else {
+                return 7;
+            }
+        } else {
+            if (asim.getPku() == null)
+                return 95;
+            else
+                return 96;
+        }
+
     }
 
     /***
@@ -382,11 +417,29 @@ public class CriptAsim {
      *
      * @param path Ubicación del fichero a descifrar
      * @return valor de control, 0 si se realizó correctamente, 1 si no existe el algoritmo,6 si la cabecera
-     *          no corresponde a nuestro programa,97 si hubiera un error de i/o,
-     *          98 si la clave no es valida, 99 si se produce un error en el cifrado.
+     * no corresponde a nuestro programa,97 si hubiera un error de i/o,
+     * 98 si la clave no es valida, 99 si se produce un error en el cifrado,7 si el fichero no es válido, 95 si no hay llave,
+     * 8 si el fichero no es valido y 96 si la llave no puede cifrar.
      */
-    public int descifrar(String path){
-        return _descifrar(path);
+    public int descifrar(String path) {
+
+        if (asim.getPku() != null && asim.getPkr().getAlgorithm().equals("RSA")) {
+            if (!path.substring(path.length() - 3, path.length()).equals("cif")) {
+                return 8;
+            }
+            if (!path.equals("")) {
+                return _descifrar(path);
+            } else {
+                return 7;
+            }
+        } else {
+            if (asim.getPku() == null)
+                return 95;
+            else
+                return 96;
+        }
+
+
     }
 
     /***
@@ -412,8 +465,8 @@ public class CriptAsim {
      *
      * @return instancia de la clase CriptAsim, inicializada con las claves locales si las hay.
      */
-    public static CriptAsim getInstancia(){
-        if (asim == null){
+    public static CriptAsim getInstancia() {
+        if (asim == null) {
             asim = new CriptAsim();
         }
         return asim;

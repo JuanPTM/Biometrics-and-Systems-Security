@@ -36,7 +36,10 @@ public class Gui extends JFrame {
     private JPanel desPanel;
     private JPanel cifPanel;
 
-
+    /***
+     * Metodo Constructor del objeto GUI
+     * Crea la interfaz y la inicializa a los valores por defecto.
+     */
     public Gui() {
 
         super("Práctica 2");
@@ -63,30 +66,13 @@ public class Gui extends JFrame {
         cifrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                int err;
 
-                if (!rutaFicheroC.getText().equals("")) {
-                    char[] contra = contraText.getPassword();
-                    char[] contraR = contraRepe.getPassword();
-                    String contraS1 = String.copyValueOf(contra);
-                    String contraR1 = String.copyValueOf(contraR);
-                    if (contraS1.equals(contraR1) && !contraS1.isEmpty()) {
-
-                        JOptionPane.showMessageDialog(RootPanel, "El proceso de cifrado ha comenzado.", "Cifrando...", JOptionPane.INFORMATION_MESSAGE);
-                        desactivarGUI();
-
-                        int err;
-                        PBE cif = new PBE();
-                        err = cif.cifrar(contraS1, algoritmo.getSelectedItem().toString(), rutaFicheroC.getText());
-
-                        msgErr(err);
-                        activarGUI();
-                    } else {
-                        msgErr(6);
-                    }
-                } else {
-                    msgErr(7);
-                }
-
+                desactivarGUI();
+                PBE cif = new PBE();
+                err = cif.cifrar(contraText.getPassword(), contraRepe.getPassword(), algoritmo.getSelectedItem().toString(), rutaFicheroC.getText());
+                activarGUI();
+                msgErr(err);
             }
         });
         mostrarCheckBox.addActionListener(new ActionListener() {
@@ -133,27 +119,13 @@ public class Gui extends JFrame {
         descifrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                int err;
 
-                if (!rutaDes.getText().equals("")) {
-                    char[] pass = contraDes.getPassword();
-                    String passwd = String.copyValueOf(pass);
-
-                    if(!passwd.equals("")) {
-                        JOptionPane.showMessageDialog(RootPanel, "El proceso de descifrado ha comenzado.", "Descifrando...", JOptionPane.INFORMATION_MESSAGE);
-                        desactivarGUI();
-
-                        int err;
-                        PBE cif = new PBE();
-                        err = cif.descifrar(passwd, rutaDes.getText());
-
-                        msgErr(err);
-                        activarGUI();
-                    }else{
-                        msgErr(8);
-                    }
-                } else {
-                    msgErr(7);
-                }
+                desactivarGUI();
+                PBE cif = new PBE();
+                err = cif.descifrar(contraDes.getPassword(), rutaDes.getText());
+                activarGUI();
+                msgErr(err);
             }
         });
     }

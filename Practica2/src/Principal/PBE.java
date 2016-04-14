@@ -26,14 +26,13 @@ import java.security.spec.InvalidKeySpecException;
 
 
 public class PBE {
-    private byte[] salt;
+    private byte[] salt = new byte[8];
     private int numIte;
     private Header cab;
 
 
     public PBE() {
         SecureRandom random = new SecureRandom();
-        salt = new byte[8];
         random.nextBytes(salt);
         numIte = 50;
         cab = new Header();
@@ -56,14 +55,30 @@ public class PBE {
     /***
      * Metodo encargado de cifrar con las caracteristicas pedidas.
      *
-     * @param pass        Frase de paso con la que se cifrará el archivo.
+     * @param pasS        Frase de paso con la que se cifrará el archivo.
+     * @param passRep     Frase de paso para asegurarse de que es igual a la anterior y por tanto la deseada.
      * @param algorithm   Algoritmo utilizado para cifrar el archivo.
      * @param rutaArchivo Ruta del archivo a cifrar.
      * @return Retornará 0 en caso de que no sucedan errores, 2 si no existe el archivo indicado, 3 si la clave es invalida,
-     * 5 en caso de no poder escribir la cabecera y 99 si es un error desconocido.
+     * 5 en caso de no poder escribir la cabecera,7 si la la ruta esta vacía,6 si las contraseñas no son iguales o estan vacias,
+     * 10 si el fichero no es valido y 99 si es un error desconocido.
      */
-    public int cifrar(String pass, String algorithm, String rutaArchivo) {
-        return _cifrar(pass, algorithm, rutaArchivo);
+    public int cifrar(char[] pasS, char[] passRep, String algorithm, String rutaArchivo) {
+
+        if (!rutaArchivo.equals("")) {
+            String contraS1 = String.copyValueOf(pasS);
+            String contraR1 = String.copyValueOf(passRep);
+            if (rutaArchivo.substring(rutaArchivo.length() - 3, rutaArchivo.length()).equals("cif")) {
+                return 10;
+            }
+            if (contraS1.equals(contraR1) && !contraS1.isEmpty()) {
+                return _cifrar(contraS1, algorithm, rutaArchivo);
+            } else {
+                return 6;
+            }
+        } else {
+            return 7;
+        }
     }
 
 
@@ -73,18 +88,30 @@ public class PBE {
      * @param pass         Frase de paso con la que se descifrará el archivo.
      * @param rutaArchivoC Ruta del archivo a descifrar.
      * @return Retornará 0 en caso de que no sucedan errores, 2 si no existe el archivo indicado, 3 si la clave es invalida,
-     * 4 en caso de no reconocer la cabecera del archivo cifrado, 9 si encuentra problemas con el padding,10 si el fichero no es valido
-     * y 99 si es un error desconocido.
+     * 4 en caso de no reconocer la cabecera del archivo cifrado, 9 si encuentra problemas con el padding,10 si el fichero no es valido,
+     * 7 si la ruta no es valida, 8 si la contraseña esta vacía y 99 si es un error desconocido.
      */
-    public int descifrar(String pass, String rutaArchivoC) {
-        return _descifrar(pass, rutaArchivoC);
+    public int descifrar(char[] pass, String rutaArchivoC) {
+
+        if (!rutaArchivoC.equals("")) {
+            String passwd = String.copyValueOf(pass);
+            if (!rutaArchivoC.substring(rutaArchivoC.length() - 3, rutaArchivoC.length()).equals("cif")) {
+                return 10;
+            }
+            if (!passwd.equals("")) {
+                return _descifrar(passwd, rutaArchivoC);
+            } else {
+                return 8;
+            }
+        } else {
+            return 7;
+        }
     }
 
     private int _cifrar(String pass, String algorithm, String rutaArchivo) {
         FileInputStream fin;
         FileOutputStream fos;
         CipherOutputStream cos;
-
 
         try {
             SecureRandom random = new SecureRandom();
@@ -141,10 +168,6 @@ public class PBE {
         FileInputStream fin;
         FileOutputStream fos;
         String algorithm;
-
-        if(!rutaArchivoC.substring(rutaArchivoC.length()-3,rutaArchivoC.length()).equals("fir")){
-            return 10;
-        }
 
         try {
             fin = new FileInputStream(rutaArchivoC);

@@ -12,7 +12,7 @@ import java.io.File;
  * Created by JuanP on 20/03/2016.
  *
  * @author Juan Pedro Torres Muñoz
- * @version 2.6
+ * @version 3
  */
 public class Gui extends JFrame {
     private JTabbedPane TabPanel;
@@ -94,8 +94,8 @@ public class Gui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fc = new JFileChooser();
-                int resp = fc.showOpenDialog(Gui.this);
                 fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+                int resp = fc.showOpenDialog(Gui.this);
 
 
                 if (resp == JFileChooser.APPROVE_OPTION) {
@@ -139,93 +139,54 @@ public class Gui extends JFrame {
         firmarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (asim.getPku() != null) {
+                int err;
 
-                    int err;
+                desactivarGUI();
+                err = asim.firmar(algFirm.getSelectedItem().toString(), rutaFir.getText());
+                activarGUI();
 
-                    if (!rutaFir.getText().equals("")) {
-                        desactivarGUI();
-                        err = asim.firmar(algFirm.getSelectedItem().toString(), rutaFir.getText());
-                        activarGUI();
-                    } else {
-                        err = 7;
-                    }
-                    msgErr(err);
-                } else {
-                    msgErr(95);
-                }
-
+                msgErr(err);
             }
         });
 
         verificarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                int err;
 
-                if (asim.getPku() != null) {
-                    int err;
+                desactivarGUI();
+                err = asim.verificar(rutaFir.getText());
+                activarGUI();
 
-                    if (!rutaFir.getText().equals("")) {
-                        desactivarGUI();
-                        err = asim.verificar(rutaFir.getText());
-                        activarGUI();
-                    } else {
-                        err = 7;
-                    }
+                msgErr(err);
 
-                    msgErr(err);
-                } else {
-                    msgErr(95);
-                }
             }
         });
 
         cifrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                int err;
 
-                if (asim.getPku() != null && asim.getPku().getAlgorithm().equals("RSA")) {
-                    int err;
+                desactivarGUI();
+                err = asim.cifrar(ruta.getText());
+                activarGUI();
 
-                    if (!ruta.getText().equals("")) {
-                        desactivarGUI();
-                        err = asim.cifrar(ruta.getText());
-                        activarGUI();
-                    } else {
-                        err = 7;
-                    }
-                    msgErr(err);
-                } else {
-                    if (asim.getPku() == null)
-                        msgErr(95);
-                    else
-                        msgErr(96);
-                }
+                msgErr(err);
+
             }
         });
 
         descifrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                int err;
 
-                if (asim.getPku() != null && asim.getPkr().getAlgorithm().equals("RSA")) {
-                    int err;
+                desactivarGUI();
+                err = asim.descifrar(ruta.getText());
+                activarGUI();
 
-                    if (!ruta.getText().equals("")) {
-                        desactivarGUI();
-                        err = asim.descifrar(ruta.getText());
-                        activarGUI();
-                    } else {
-                        err = 7;
-                    }
-                    msgErr(err);
-                } else {
-                    if (asim.getPku() == null)
-                        msgErr(95);
-                    else
-                        msgErr(96);
-                }
-
+                msgErr(err);
             }
         });
 
