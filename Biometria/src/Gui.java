@@ -20,15 +20,15 @@ public class Gui extends JFrame {
     private JPanel derPanel;
     private JPanel topPanel;
     private JButton igualButton;
-    private JButton button2;
-    private JButton button3;
+    private JButton destinoAFuenteButton;
+    private JButton gris;
     private JButton button4;
     private JButton button5;
     private JButton button6;
     private JPanel botonesPanel;
     private JPanel infoPanel;
 
-    public Gui(){
+    public Gui() {
         super("Práctica 2");
         init();
         addListener();
@@ -44,12 +44,9 @@ public class Gui extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-//        ImageIcon image = new ImageIcon(this.getClass().getResource("/res/by-nc-sa.png"));
-//        JLabel label = new JLabel("", image, JLabel.CENTER);
-//        ccPanel.add(label);
     }
 
-    private void addListener(){
+    private void addListener() {
         cargarImagenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -60,27 +57,57 @@ public class Gui extends JFrame {
                 if (resp == JFileChooser.APPROVE_OPTION) {
                     imagenFuentePanel.removeAll();
                     File f = fc.getSelectedFile();
-                    try {
-                        BufferedImage myPicture = ImageIO.read(new File(f.getAbsolutePath()));
-                        JLabel picLabel = new JLabel(new ImageIcon(myPicture));
-                        imagenFuentePanel.add(picLabel);
-                        imagenFuentePanel.revalidate();
-                        imagenFuentePanel.repaint();
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
+                    Filtros.getInstance().loadImage(f.getAbsolutePath());
+                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getMypicture()));
+
+                    imagenFuentePanel.add(picLabel);
+                    imagenFuentePanel.revalidate();
+                    imagenFuentePanel.repaint();
+
                 }
             }
         });
 
-        igualButton.addActionListener(new ActionListener() {
+        gris.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (imagenFuentePanel.getComponents().length > 0) {
-                    imagenFinPanel.add(imagenFuentePanel.getComponent(0));
+                if (Filtros.getInstance().isLoad()) {
+                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getGrisImg()));
+
+                    imagenFinPanel.removeAll();
+                    imagenFinPanel.add(picLabel);
                     imagenFinPanel.revalidate();
                     imagenFinPanel.repaint();
                 }
+
+            }
+        });
+        igualButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (Filtros.getInstance().isLoad()) {
+                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getMypicture()));
+                    imagenFinPanel.removeAll();
+                    Filtros.getInstance().setPictureFinal(Filtros.getInstance().getMypicture());
+                    imagenFinPanel.add(picLabel);
+                    imagenFinPanel.revalidate();
+                    imagenFinPanel.repaint();
+                }
+            }
+        });
+
+        destinoAFuenteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (Filtros.getInstance().isLoad()) {
+                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
+                    imagenFuentePanel.removeAll();
+                    Filtros.getInstance().setMypicture(Filtros.getInstance().getPictureFinal());
+                    imagenFuentePanel.add(picLabel);
+                    imagenFuentePanel.revalidate();
+                    imagenFuentePanel.repaint();
+                }
+
             }
         });
     }
