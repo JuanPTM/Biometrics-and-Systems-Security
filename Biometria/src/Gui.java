@@ -1,11 +1,8 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 
 /**
  * Created by juanp on 16/04/16.
@@ -22,7 +19,7 @@ public class Gui extends JFrame {
     private JButton igualButton;
     private JButton destinoAFuenteButton;
     private JButton gris;
-    private JButton button4;
+    private JButton binarizacionButton;
     private JButton button5;
     private JButton button6;
     private JPanel botonesPanel;
@@ -82,6 +79,7 @@ public class Gui extends JFrame {
 
             }
         });
+
         igualButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -108,6 +106,33 @@ public class Gui extends JFrame {
                     imagenFuentePanel.repaint();
                 }
 
+            }
+        });
+
+        binarizacionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (Filtros.getInstance().isLoad()) {
+                    String s = JOptionPane.showInputDialog(rootPane,"Introduzca el valor del umbral","Introduzca un valor");
+
+                    try {
+                        int umbral = Integer.parseInt(s);
+                        if (umbral >=0 && umbral<=255 ) {
+                            JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().thresholdFilter(umbral)));
+
+                            imagenFinPanel.removeAll();
+                            imagenFinPanel.add(picLabel);
+                            imagenFinPanel.revalidate();
+                            imagenFinPanel.repaint();
+                        }else{
+                            JOptionPane.showMessageDialog(rootPane,"El valor debe estar entre 0 y 255","Error al intentar umbralizar",JOptionPane.ERROR_MESSAGE);
+                        }
+                    } catch (NumberFormatException e1) {
+                        JOptionPane.showMessageDialog(rootPane,"El valor debe estar entre 0 y 255","Error al intentar umbralizar",JOptionPane.ERROR_MESSAGE);
+                    } catch (HeadlessException e1) {
+                        e1.printStackTrace();
+                    }
+                }
             }
         });
     }

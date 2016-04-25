@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Created by juanp on 20/04/16.
@@ -61,6 +62,7 @@ public class Filtros {
             }
         }
         pictureFinal = newImage;
+        getHistogram();
         return newImage;
 
     }
@@ -85,10 +87,50 @@ public class Filtros {
         System.out.println("El valor ROJO,VERDE,AZUL son: " + red + green + blue + "El valor medio es " + (im2.getRGB(500, 500) & 0x000000FF));
     }
 
-    public boolean isLoad(){
+    public boolean isLoad() {
         if (mypicture != null)
             return true;
         else
             return false;
+    }
+
+    public int[] getHistogram() {
+        int[] histogram = new int[256];
+        for (int i : histogram
+                ) {
+            histogram[i] = 0;
+        }
+        int valueGrey;
+        for (int i = 0; i < mypicture.getHeight(); i++) {
+            for (int j = 0; j < mypicture.getWidth(); j++) {
+                valueGrey = mypicture.getRGB(j, i) & 0xFF;
+                histogram[valueGrey]++;
+            }
+        }
+        System.out.println(Arrays.toString(histogram));
+
+        return histogram;
+    }
+
+    public BufferedImage thresholdFilter(int umbral){
+        BufferedImage newImage = new BufferedImage(mypicture.getWidth(),
+                mypicture.getHeight(), mypicture.getType());
+        int blanco = (255 << 8) | 255;
+        blanco = (blanco << 8) | 255;
+        int valueGrey;
+
+        for (int i = 0; i < mypicture.getHeight(); i++) {
+            for (int j = 0; j < mypicture.getWidth(); j++) {
+                valueGrey = mypicture.getRGB(j, i) & 0xFF;
+                if ( valueGrey < umbral){
+                    newImage.setRGB(j,i,0);
+                }else{
+                    newImage.setRGB(j,i,blanco);
+                }
+            }
+        }
+
+        pictureFinal = newImage;
+        return newImage;
     }
 }
