@@ -20,7 +20,7 @@ public class Gui extends JFrame {
     private JButton destinoAFuenteButton;
     private JButton gris;
     private JButton binarizacionButton;
-    private JButton button5;
+    private JButton ecualizarButton;
     private JButton button6;
     private JPanel botonesPanel;
     private JPanel infoPanel;
@@ -132,6 +132,20 @@ public class Gui extends JFrame {
                     } catch (HeadlessException e1) {
                         e1.printStackTrace();
                     }
+                }
+            }
+        });
+
+        ecualizarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (Filtros.getInstance().isLoad()) {
+                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getUmbralizar()));
+
+                    imagenFinPanel.removeAll();
+                    imagenFinPanel.add(picLabel);
+                    imagenFinPanel.revalidate();
+                    imagenFinPanel.repaint();
                 }
             }
         });
