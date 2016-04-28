@@ -26,7 +26,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
+            <state relative-caret-position="54">
               <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
               <folding>
                 <element signature="e#64#65#0" expanded="true" />
@@ -39,29 +39,52 @@
       <file leaf-file-name="Gui.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
-              <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+            <state relative-caret-position="54">
+              <caret line="173" column="56" selection-start-line="173" selection-start-column="56" selection-end-line="173" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#1191:2001" expanded="false" />
-                <element signature="class#2575:3161" expanded="false" />
-                <element signature="class#3216:3818" expanded="false" />
+                <element signature="class#1270:2080" expanded="false" />
+                <element signature="class#2119:2608" expanded="false" />
+                <element signature="class#2654:3240" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Filtros.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Filtros.java">
+        <entry file="file://$PROJECT_DIR$/src/Filtros/Filtros.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="111" column="9" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+            <state relative-caret-position="191">
+              <caret line="230" column="40" selection-start-line="230" selection-start-column="40" selection-end-line="230" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#444#445#0" expanded="true" />
+                <element signature="e#476#477#0" expanded="true" />
+                <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
+                <element signature="e#1937#1938#0" expanded="true" />
                 <element signature="method#loadImage#0;class#Filtros#0" expanded="false" />
                 <element signature="method#pintar#0;class#Filtros#0" expanded="false" />
+                <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
+                <element signature="method#getHistogram#0;class#Filtros#0" expanded="false" />
+                <element signature="method#thresholdFilter#0;class#Filtros#0" expanded="false" />
+                <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
+                <element signature="method#getUmbralizar#0;class#Filtros#0" expanded="false" />
+                <element signature="method#toBufferedImage#0;class#Filtros#0" expanded="false" />
+                <element signature="e#5769#5770#0" expanded="true" />
+                <element signature="e#5846#5847#0" expanded="true" />
+                <element signature="e#5884#5885#0" expanded="true" />
+                <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
+                <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
+                <element signature="method#binaryFilter2#0;class#Filtros#0" expanded="false" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gui.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Gui.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -85,9 +108,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/filtros.java" />
-        <option value="$PROJECT_DIR$/src/Gui.form" />
+        <option value="/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar!/sun/misc/Unsafe.class" />
         <option value="$PROJECT_DIR$/src/Gui.java" />
         <option value="$PROJECT_DIR$/src/Filtros.java" />
+        <option value="$PROJECT_DIR$/src/Gui.form" />
+        <option value="$PROJECT_DIR$/src/Filtros/Filtros.java" />
       </list>
     </option>
   </component>
@@ -104,9 +129,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
     <option name="y" value="25" />
-    <option name="width" value="1366" />
-    <option name="height" value="743" />
+    <option name="width" value="1368" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -149,8 +175,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -201,9 +225,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Biometria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Biometria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Filtros" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -636,14 +680,17 @@
       <workItem from="1461408858133" duration="699000" />
       <workItem from="1461568382366" duration="3599000" />
       <workItem from="1461750846543" duration="7971000" />
+      <workItem from="1461825579035" duration="3518000" />
+      <workItem from="1461857577966" duration="1474000" />
+      <workItem from="1461859081039" duration="9456000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25405000" />
+    <option name="totallyTimeSpent" value="39853000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1366" height="743" extended-state="6" />
+    <frame x="-1" y="25" width="1368" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -660,6 +707,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -670,7 +718,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -689,7 +736,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="13" />
+      <option name="time" value="32" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -715,21 +762,209 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1191:2001" expanded="false" />
-            <element signature="class#2575:3161" expanded="false" />
-            <element signature="class#3216:3818" expanded="false" />
+            <element signature="class#1270:2080" expanded="false" />
+            <element signature="class#2119:2608" expanded="false" />
+            <element signature="class#2654:3240" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Filtros.java">
+    <entry file="file://$PROJECT_DIR$/src/Filtros/Filtros.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
+            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="method#loadImage#0;class#Filtros#0" expanded="false" />
+            <element signature="method#pintar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getHistogram#0;class#Filtros#0" expanded="false" />
+            <element signature="method#thresholdFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getUmbralizar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#toBufferedImage#0;class#Filtros#0" expanded="false" />
+            <element signature="e#5769#5770#0" expanded="true" />
+            <element signature="e#5846#5847#0" expanded="true" />
+            <element signature="e#5884#5885#0" expanded="true" />
+            <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter2#0;class#Filtros#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui.form">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding>
+            <element signature="e#64#65#0" expanded="true" />
+            <element signature="e#96#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2016">
+          <caret line="156" column="99" selection-start-line="156" selection-start-column="99" selection-end-line="156" selection-end-column="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#1270:2080" expanded="false" />
+            <element signature="class#2119:2608" expanded="false" />
+            <element signature="class#2654:3240" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Filtros/Filtros.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
+            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="method#loadImage#0;class#Filtros#0" expanded="false" />
+            <element signature="method#pintar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getHistogram#0;class#Filtros#0" expanded="false" />
+            <element signature="method#thresholdFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getUmbralizar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#toBufferedImage#0;class#Filtros#0" expanded="false" />
+            <element signature="e#5769#5770#0" expanded="true" />
+            <element signature="e#5846#5847#0" expanded="true" />
+            <element signature="e#5884#5885#0" expanded="true" />
+            <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter2#0;class#Filtros#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui.form">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding>
+            <element signature="e#64#65#0" expanded="true" />
+            <element signature="e#96#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1764">
+          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#1270:2080" expanded="false" />
+            <element signature="class#2119:2608" expanded="false" />
+            <element signature="class#2654:3240" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Filtros/Filtros.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
+            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="method#loadImage#0;class#Filtros#0" expanded="false" />
+            <element signature="method#pintar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getHistogram#0;class#Filtros#0" expanded="false" />
+            <element signature="method#thresholdFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getUmbralizar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#toBufferedImage#0;class#Filtros#0" expanded="false" />
+            <element signature="e#5769#5770#0" expanded="true" />
+            <element signature="e#5846#5847#0" expanded="true" />
+            <element signature="e#5884#5885#0" expanded="true" />
+            <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter2#0;class#Filtros#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding>
+            <element signature="e#64#65#0" expanded="true" />
+            <element signature="e#96#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#1270:2080" expanded="false" />
+            <element signature="class#2119:2608" expanded="false" />
+            <element signature="class#2654:3240" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Filtros/Filtros.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1728">
           <caret line="109" column="55" selection-start-line="109" selection-start-column="55" selection-end-line="109" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
+            <element signature="e#1937#1938#0" expanded="true" />
             <element signature="method#loadImage#0;class#Filtros#0" expanded="false" />
             <element signature="method#pintar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getHistogram#0;class#Filtros#0" expanded="false" />
+            <element signature="method#thresholdFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getUmbralizar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#toBufferedImage#0;class#Filtros#0" expanded="false" />
+            <element signature="e#5769#5770#0" expanded="true" />
+            <element signature="e#5846#5847#0" expanded="true" />
+            <element signature="e#5884#5885#0" expanded="true" />
+            <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter2#0;class#Filtros#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -770,9 +1005,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1191:2001" expanded="false" />
-            <element signature="class#2575:3161" expanded="false" />
-            <element signature="class#3216:3818" expanded="false" />
+            <element signature="class#1270:2080" expanded="false" />
+            <element signature="class#2119:2608" expanded="false" />
+            <element signature="class#2654:3240" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -785,14 +1020,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Filtros.java">
+    <entry file="file://$PROJECT_DIR$/src/Filtros/Filtros.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1134">
           <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
+            <element signature="e#1937#1938#0" expanded="true" />
             <element signature="method#loadImage#0;class#Filtros#0" expanded="false" />
             <element signature="method#pintar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getHistogram#0;class#Filtros#0" expanded="false" />
+            <element signature="method#thresholdFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getUmbralizar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#toBufferedImage#0;class#Filtros#0" expanded="false" />
+            <element signature="e#5769#5770#0" expanded="true" />
+            <element signature="e#5846#5847#0" expanded="true" />
+            <element signature="e#5884#5885#0" expanded="true" />
+            <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter2#0;class#Filtros#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -822,21 +1073,37 @@
           <caret line="69" column="51" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1191:2001" expanded="false" />
-            <element signature="class#2575:3161" expanded="false" />
-            <element signature="class#3216:3818" expanded="false" />
+            <element signature="class#1270:2080" expanded="false" />
+            <element signature="class#2119:2608" expanded="false" />
+            <element signature="class#2654:3240" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Filtros.java">
+    <entry file="file://$PROJECT_DIR$/src/Filtros/Filtros.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
+            <element signature="e#1937#1938#0" expanded="true" />
             <element signature="method#loadImage#0;class#Filtros#0" expanded="false" />
             <element signature="method#pintar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getHistogram#0;class#Filtros#0" expanded="false" />
+            <element signature="method#thresholdFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getUmbralizar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#toBufferedImage#0;class#Filtros#0" expanded="false" />
+            <element signature="e#5769#5770#0" expanded="true" />
+            <element signature="e#5846#5847#0" expanded="true" />
+            <element signature="e#5884#5885#0" expanded="true" />
+            <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter2#0;class#Filtros#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -877,9 +1144,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1191:2001" expanded="false" />
-            <element signature="class#2575:3161" expanded="false" />
-            <element signature="class#3216:3818" expanded="false" />
+            <element signature="class#1270:2080" expanded="false" />
+            <element signature="class#2119:2608" expanded="false" />
+            <element signature="class#2654:3240" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -940,21 +1207,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/NumberFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="301" column="25" selection-start-line="301" selection-start-column="25" selection-end-line="301" selection-end-column="25" />
+          <folding>
+            <element signature="e#10902#10903#0" expanded="false" />
+            <element signature="e#10948#10949#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="354" column="23" selection-start-line="354" selection-start-column="23" selection-end-line="354" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="3234" column="25" selection-start-line="3234" selection-start-column="25" selection-end-line="3234" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/reflect/Array.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
+        <state relative-caret-position="54">
           <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
           <folding>
             <element signature="e#64#65#0" expanded="true" />
             <element signature="e#96#97#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/NumberFormatException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -971,25 +1273,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+        <state relative-caret-position="54">
+          <caret line="173" column="56" selection-start-line="173" selection-start-column="56" selection-end-line="173" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#1191:2001" expanded="false" />
-            <element signature="class#2575:3161" expanded="false" />
-            <element signature="class#3216:3818" expanded="false" />
+            <element signature="class#1270:2080" expanded="false" />
+            <element signature="class#2119:2608" expanded="false" />
+            <element signature="class#2654:3240" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Filtros.java">
+    <entry file="file://$PROJECT_DIR$/src/Filtros/Filtros.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="111" column="9" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+        <state relative-caret-position="191">
+          <caret line="230" column="40" selection-start-line="230" selection-start-column="40" selection-end-line="230" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
+            <element signature="e#1937#1938#0" expanded="true" />
             <element signature="method#loadImage#0;class#Filtros#0" expanded="false" />
             <element signature="method#pintar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getHistogram#0;class#Filtros#0" expanded="false" />
+            <element signature="method#thresholdFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getUmbralizar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#toBufferedImage#0;class#Filtros#0" expanded="false" />
+            <element signature="e#5769#5770#0" expanded="true" />
+            <element signature="e#5846#5847#0" expanded="true" />
+            <element signature="e#5884#5885#0" expanded="true" />
+            <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter2#0;class#Filtros#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -1,3 +1,5 @@
+import Filtros.Filtros;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -21,9 +23,10 @@ public class Gui extends JFrame {
     private JButton gris;
     private JButton binarizacionButton;
     private JButton ecualizarButton;
-    private JButton button6;
+    private JButton filtroBinarioButton;
     private JPanel botonesPanel;
     private JPanel infoPanel;
+    private JButton filtroBinario2Button;
 
     public Gui() {
         super("Práctica 2");
@@ -98,9 +101,11 @@ public class Gui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (Filtros.getInstance().isLoad()) {
+                    Filtros.getInstance().dstToSrc();
                     JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
                     imagenFuentePanel.removeAll();
                     Filtros.getInstance().setMypicture(Filtros.getInstance().getPictureFinal());
+
                     imagenFuentePanel.add(picLabel);
                     imagenFuentePanel.revalidate();
                     imagenFuentePanel.repaint();
@@ -112,7 +117,7 @@ public class Gui extends JFrame {
         binarizacionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (Filtros.getInstance().isLoad()) {
+                if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
                     String s = JOptionPane.showInputDialog(rootPane,"Introduzca el valor del umbral","Introduzca un valor");
 
                     try {
@@ -139,8 +144,36 @@ public class Gui extends JFrame {
         ecualizarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (Filtros.getInstance().isLoad()) {
+                if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
                     JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getUmbralizar()));
+
+                    imagenFinPanel.removeAll();
+                    imagenFinPanel.add(picLabel);
+                    imagenFinPanel.revalidate();
+                    imagenFinPanel.repaint();
+                }
+            }
+        });
+
+        filtroBinarioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
+                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().binaryFilter()));
+
+                    imagenFinPanel.removeAll();
+                    imagenFinPanel.add(picLabel);
+                    imagenFinPanel.revalidate();
+                    imagenFinPanel.repaint();
+                }
+            }
+        });
+
+        filtroBinario2Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
+                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().binaryFilter2()));
 
                     imagenFinPanel.removeAll();
                     imagenFinPanel.add(picLabel);

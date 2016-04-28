@@ -1,18 +1,20 @@
+package Filtros;
+
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 
 /**
  * Created by juanp on 20/04/16.
  */
+
 public class Filtros {
     private static Filtros ourInstance = new Filtros();
     private BufferedImage mypicture;
     private BufferedImage pictureFinal;
     private byte[][] imageMatriz;
+    private boolean isGrey = false;
 
     public BufferedImage getMypicture() {
         return mypicture;
@@ -65,8 +67,13 @@ public class Filtros {
             }
         }
         pictureFinal = newImage;
+        isGrey = true;
         return newImage;
 
+    }
+
+    public boolean isGrey() {
+        return isGrey;
     }
 
     public void loadImage(String path) {
@@ -97,7 +104,7 @@ public class Filtros {
             return false;
     }
 
-    public int[] getHistogram() {
+    private int[] getHistogram() {
         int[] histogram = new int[256];
         for (int i : histogram
                 ) {
@@ -115,14 +122,14 @@ public class Filtros {
     }
 
     public BufferedImage thresholdFilter(int umbral) {
-        BufferedImage newImage = new BufferedImage(mypicture.getWidth(),
-                mypicture.getHeight(), mypicture.getType());
+        int valueGrey;
         int blanco = (255 << 8) | 255;
         blanco = (blanco << 8) | 255;
-        int valueGrey;
+        BufferedImage newImage = new BufferedImage(mypicture.getWidth(),
+                mypicture.getHeight(), mypicture.getType());
 
-        for (int i = 0; i < mypicture.getHeight(); i++) {
-            for (int j = 0; j < mypicture.getWidth(); j++) {
+        for (int i = 0; i < imageMatriz.length; i++) {
+            for (int j = 0; j < imageMatriz[i].length; j++) {
                 valueGrey = mypicture.getRGB(j, i) & 0xFF;
                 if (valueGrey < umbral) {
                     newImage.setRGB(j, i, 0);
@@ -133,7 +140,6 @@ public class Filtros {
                 }
             }
         }
-
         pictureFinal = newImage;
         return newImage;
     }
@@ -169,14 +175,13 @@ public class Filtros {
             }
 
         }
-
         newImage = toBufferedImage();
         pictureFinal = newImage;
         return newImage;
 
     }
 
-    public BufferedImage toBufferedImage() {
+    private BufferedImage toBufferedImage() {
         BufferedImage newImage = new BufferedImage(mypicture.getWidth(),
                 mypicture.getHeight(), mypicture.getType());
 
@@ -184,7 +189,7 @@ public class Filtros {
         int rgbfinal;
         for (int i = 0; i < mypicture.getHeight(); i++) {
             for (int j = 0; j < mypicture.getWidth(); j++) {
-                media = imageMatriz[i][j] & 0xFF;
+                media = (imageMatriz[i][j] & 0xFF);
                 rgbfinal = (media << 8) | media;
                 rgbfinal = (rgbfinal << 8) | media;
                 newImage.setRGB(j, i, rgbfinal);
@@ -193,4 +198,87 @@ public class Filtros {
         }
         return newImage;
     }
+
+    public void dstToSrc() {
+        mypicture = toBufferedImage();
+    }
+
+    public byte[] getArray() {
+        return imageMatriz[13];
+    }
+
+    public BufferedImage smoothing() {
+
+        double[][] kernel = {{0.125, 0.125, 0.125}, {0.125, 0, 0.125}, {0.125, 0.125, 0.125}};
+
+        for (int i = 1; i < imageMatriz.length - 1; i++) {
+            for (int j = 1; j < imageMatriz[i].length - 1; j++) {
+                float suma = 0;
+
+                for (int k = -1; k < 2; k++) {
+                    for (int l = -1; l < 2; l++) {
+                        int valor = imageMatriz[i + k][j + l] & 0xFF;
+                        suma = (float) (suma + (kernel[1 + k][1 + l] * valor));
+                    }
+                }
+                imageMatriz[i][j] = (byte) suma;
+            }
+        }
+        mypicture = toBufferedImage();
+        return mypicture;
+    }
+
+    public BufferedImage binaryFilter() {
+        byte[][] newMatrix = new byte[imageMatriz.length][imageMatriz[1].length];
+        for (int i = 0; i < imageMatriz.length; i++) {
+            for (int j = 0; j < imageMatriz[i].length; j++) {
+                newMatrix[i][j] = imageMatriz[i][j];
+            }
+        }
+
+        for (int i = 1; i < imageMatriz.length - 1; i++) {
+            for (int j = 1; j < imageMatriz[i].length - 1; j++) {
+                int b = (int) imageMatriz[i - 1][j] + 1;
+                int d = (int) imageMatriz[i][j - 1] + 1;
+                int p = (int) imageMatriz[i][j] + 1;
+                int e = (int) imageMatriz[i][j + 1] + 1;
+                int g = (int) (imageMatriz[i + 1][j]) + 1;
+
+                int valor = p + (b * g * (d + e)) + (d * e * (b + g));
+                if (valor != 0) {
+                    newMatrix[i][j] = (byte) 0;
+                } else
+                    newMatrix[i][j] = (byte) 255;
+            }
+        }
+        imageMatriz = newMatrix;
+        pictureFinal = toBufferedImage();
+        return pictureFinal;
+    }
+
+    // TODO: 28/04/16 hacer
+    public BufferedImage binaryFilter2() {
+        for (int i = 1; i < imageMatriz.length - 1; i++) {
+            for (int j = 1; j < imageMatriz[i].length - 1; j++) {
+                byte a = imageMatriz[i - 1][j - 1];
+                byte b = imageMatriz[i - 1][j];
+                byte c = imageMatriz[i - 1][j + 1];
+                byte d = imageMatriz[i][j - 1];
+                byte p = imageMatriz[i][j];
+                byte e = imageMatriz[i][j + 1];
+                byte f = imageMatriz[i + 1][j - 1];
+                byte g = imageMatriz[i + 1][j];
+                byte h = imageMatriz[i + 1][j + 1];
+
+                int valor = p * ((a + b + d) * (e + g + h) * (b + c + e) * (d + f + g));
+                if (valor > 0) {
+                    imageMatriz[i][j] = (byte) 255;
+                } else
+                    imageMatriz[i][j] = (byte) valor;
+            }
+        }
+        pictureFinal = toBufferedImage();
+        return pictureFinal;
+    }
+
 }
