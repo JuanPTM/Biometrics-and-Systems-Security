@@ -27,6 +27,8 @@ public class Gui extends JFrame {
     private JPanel botonesPanel;
     private JPanel infoPanel;
     private JButton filtroBinario2Button;
+    private JButton adelgazamientoButton;
+    private JButton obtenerMinuciasButton;
 
     public Gui() {
         super("Práctica 2");
@@ -100,7 +102,7 @@ public class Gui extends JFrame {
         destinoAFuenteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (Filtros.getInstance().isLoad()) {
+                if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
                     Filtros.getInstance().dstToSrc();
                     JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
                     imagenFuentePanel.removeAll();
@@ -145,7 +147,7 @@ public class Gui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
-                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getUmbralizar()));
+                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getEcualizar()));
 
                     imagenFinPanel.removeAll();
                     imagenFinPanel.add(picLabel);
@@ -173,13 +175,36 @@ public class Gui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
-                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().binaryFilter2()));
+                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().binaryFilterRuido()));
 
                     imagenFinPanel.removeAll();
                     imagenFinPanel.add(picLabel);
                     imagenFinPanel.revalidate();
                     imagenFinPanel.repaint();
                 }
+            }
+        });
+
+        adelgazamientoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
+                    Thinner n = new Thinner(Filtros.getInstance().getMypicture());
+                    Filtros.getInstance().setPictureFinal(n.getResult());
+                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
+
+                    imagenFinPanel.removeAll();
+                    imagenFinPanel.add(picLabel);
+                    imagenFinPanel.revalidate();
+                    imagenFinPanel.repaint();
+                }
+            }
+        });
+
+        obtenerMinuciasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
     }

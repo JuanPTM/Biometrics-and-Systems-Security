@@ -157,7 +157,23 @@
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Filtro binario2"/>
+                  <text value="Filtro Binario Eliminacion"/>
+                </properties>
+              </component>
+              <component id="689ea" class="javax.swing.JButton" binding="adelgazamientoButton" default-binding="true">
+                <constraints>
+                  <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Adelgazamiento"/>
+                </properties>
+              </component>
+              <component id="46f7f" class="javax.swing.JButton" binding="obtenerMinuciasButton" default-binding="true">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Obtener Minucias"/>
                 </properties>
               </component>
             </children>
