@@ -30,6 +30,12 @@ public class Filtros {
 
     public void setPictureFinal(BufferedImage pictureFinal) {
         this.pictureFinal = pictureFinal;
+        for (int i = 0; i < pictureFinal.getHeight(); i++) {
+            for (int j = 0; j < pictureFinal.getWidth(); j++) {
+                imageMatriz[i][j] = (byte) (mypicture.getRGB(j, i) & 0xFF);
+            }
+        }
+
     }
 
     public static Filtros getInstance() {
@@ -233,7 +239,7 @@ public class Filtros {
                 int d = (int) imageMatriz[i][j - 1] + 1;
                 int p = (int) imageMatriz[i][j] + 1;
                 int e = (int) imageMatriz[i][j + 1] + 1;
-                int g = (int) (imageMatriz[i + 1][j]) + 1;
+                int g = (int) imageMatriz[i + 1][j] + 1;
 
                 int valor = p + (b * g * (d + e)) + (d * e * (b + g));
                 if (valor != 0) {
@@ -279,7 +285,7 @@ public class Filtros {
         return pictureFinal;
     }
 
-    // TODO: 30/04/16 Preguntar por lo del filtro a usar
+
 
     public BufferedImage adelgazamiento() {
         adelgazar();

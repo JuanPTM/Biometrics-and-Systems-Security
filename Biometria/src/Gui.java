@@ -1,10 +1,13 @@
 import Filtros.Filtros;
+import Filtros.Thinner;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by juanp on 16/04/16.
@@ -193,6 +196,15 @@ public class Gui extends JFrame {
                     Filtros.getInstance().setPictureFinal(n.getResult());
                     JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
 
+
+                    File outputfile = new File("image.jpg");
+                    try {
+                        ImageIO.write(Filtros.getInstance().getPictureFinal(), "jpg", outputfile);
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+
+
                     imagenFinPanel.removeAll();
                     imagenFinPanel.add(picLabel);
                     imagenFinPanel.revalidate();
@@ -204,7 +216,16 @@ public class Gui extends JFrame {
         obtenerMinuciasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
+                    ExtractorMinucias n = new ExtractorMinucias(Filtros.getInstance().getPictureFinal());
+                    Filtros.getInstance().setPictureFinal(n.getMinucias(1));
+                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
 
+                    imagenFinPanel.removeAll();
+                    imagenFinPanel.add(picLabel);
+                    imagenFinPanel.revalidate();
+                    imagenFinPanel.repaint();
+                }
             }
         });
     }
