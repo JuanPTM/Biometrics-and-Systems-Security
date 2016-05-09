@@ -1,5 +1,6 @@
 import Filtros.Filtros;
 import Filtros.Thinner;
+import Tratamiento.ExtractorMinucias;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -217,8 +218,8 @@ public class Gui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
-                    ExtractorMinucias n = new ExtractorMinucias(Filtros.getInstance().getPictureFinal());
-                    Filtros.getInstance().setPictureFinal(n.getMinucias(1));
+                    ExtractorMinucias n = ExtractorMinucias.getInstance(Filtros.getInstance().getMypicture());
+                    Filtros.getInstance().setPictureFinal(n.getMinucias(50));
                     JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
 
                     imagenFinPanel.removeAll();

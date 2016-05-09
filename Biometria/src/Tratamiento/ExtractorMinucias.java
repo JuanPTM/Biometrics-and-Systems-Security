@@ -1,17 +1,22 @@
+package Tratamiento;
+
 import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 
 /**
  * Created by juanp on 5/05/16.
  */
+
 public class ExtractorMinucias {
+    private static ExtractorMinucias extmin = null;
     private BufferedImage mypicture;
     private BufferedImage pictureFinal;
     private byte[][] imageMatriz;
     private byte[][] matrizFinal;
-    private LinkedList<Minucias> ListaMin = new LinkedList<>();
+    private LinkedList<Minucias> ListaMinF = new LinkedList<>();
+    private LinkedList<Minucias> ListaMinB = new LinkedList<>();
 
-    public ExtractorMinucias(BufferedImage picture) {
+    private ExtractorMinucias(BufferedImage picture) {
         mypicture = picture;
         imageMatriz = new byte[picture.getHeight()][picture.getWidth()];
         int value;
@@ -23,6 +28,14 @@ public class ExtractorMinucias {
         }
     }
 
+    public static ExtractorMinucias getInstance(BufferedImage b) {
+        if (extmin == null) {
+            return new ExtractorMinucias(b);
+        } else {
+            return extmin;
+        }
+    }
+
     public BufferedImage getMinucias(int umbral) {
         byte[][] newMatrix = new byte[imageMatriz.length][imageMatriz[1].length];
         for (int i = 0; i < imageMatriz.length; i++) {
@@ -31,8 +44,8 @@ public class ExtractorMinucias {
             }
         }
 
-        for (int i = umbral; i < imageMatriz.length - 1 ; i++) {
-            for (int j = umbral; j < imageMatriz[i].length - 1 ; j++) {
+        for (int i = umbral; i < imageMatriz.length - 1 - umbral; i++) {
+            for (int j = umbral; j < imageMatriz[i].length - 1 - umbral; j++) {
                 int p4 = (int) imageMatriz[i - 1][j - 1] + 1;
                 int p3 = (int) imageMatriz[i - 1][j] + 1;
                 int p2 = (int) imageMatriz[i - 1][j + 1] + 1;
@@ -43,36 +56,40 @@ public class ExtractorMinucias {
                 int p7 = (int) imageMatriz[i + 1][j] + 1;
                 int p8 = (int) imageMatriz[i + 1][j + 1] + 1;
 
-                int valor = Math.abs(p1-p2)+Math.abs(p2-p3)+Math.abs(p3-p4)+Math.abs(p4-p5)+Math.abs(p5-p6)+Math.abs(p6-p7)+Math.abs(p7-p8)+Math.abs(p8-p1);
+                int valor = Math.abs(p1 - p2) + Math.abs(p2 - p3) + Math.abs(p3 - p4) + Math.abs(p4 - p5) + Math.abs(p5 - p6) + Math.abs(p6 - p7) + Math.abs(p7 - p8) + Math.abs(p8 - p1);
                 valor /= 2;
 
-                if (valor == 1 && p == 1) { //minucia final
-// TODO: 5/05/16 Guardar minucia en la lista
-                    newMatrix[i - 1][j - 1] = (byte) 2;
-                    newMatrix[i - 1][j] = (byte) 2;
-                    newMatrix[i - 1][j + 1] = (byte) 2;
-                    newMatrix[i][j - 1] = (byte) 2;
-                    newMatrix[i][j + 1] = (byte) 2;
-                    newMatrix[i + 1][j - 1] = (byte) 2;
-                    newMatrix[i + 1][j] = (byte) 2;
-                    newMatrix[i + 1][j + 1] = (byte) 2;
-                    newMatrix[i][j] = (byte) 2;
-                    System.out.println("Minucia Fin en : (" + i + "," + j + ").");
-                } else if (valor == 3 && p == 1) { // minucia bifurcacion
-                    newMatrix[i][j] = (byte) 3;
-                    System.out.println("Minucia bifurcacion en : (" + i + "," + j + ").");
-                    newMatrix[i - 1][j - 1] = (byte) 3;
-                    newMatrix[i - 1][j] = (byte) 3;
-                    newMatrix[i - 1][j + 1] = (byte) 3;
-                    newMatrix[i][j - 1] = (byte) 3;
-                    newMatrix[i][j + 1] = (byte) 3;
-                    newMatrix[i + 1][j - 1] = (byte) 3;
-                    newMatrix[i + 1][j] = (byte) 3;
-                    newMatrix[i + 1][j + 1] = (byte) 3;
-                    // TODO: 5/05/16 Guardarla en la lista
+               // if (j >= (imageMatriz[i].length) && j <= ((imageMatriz[i].length))) {
+                    if (valor == 1 && p == 1) { //minucia final
+
+                        newMatrix[i - 1][j - 1] = (byte) 2;
+                        newMatrix[i - 1][j] = (byte) 2;
+                        newMatrix[i - 1][j + 1] = (byte) 2;
+                        newMatrix[i][j - 1] = (byte) 2;
+                        newMatrix[i][j + 1] = (byte) 2;
+                        newMatrix[i + 1][j - 1] = (byte) 2;
+                        newMatrix[i + 1][j] = (byte) 2;
+                        newMatrix[i + 1][j + 1] = (byte) 2;
+                        newMatrix[i][j] = (byte) 2;
+                        ListaMinF.add(new Minucias(i, j, 'F'));
+
+                    } else if (valor == 3 && p == 1) { // minucia bifurcacion
+
+                        newMatrix[i][j] = (byte) 3;
+                        newMatrix[i - 1][j - 1] = (byte) 3;
+                        newMatrix[i - 1][j] = (byte) 3;
+                        newMatrix[i - 1][j + 1] = (byte) 3;
+                        newMatrix[i][j - 1] = (byte) 3;
+                        newMatrix[i][j + 1] = (byte) 3;
+                        newMatrix[i + 1][j - 1] = (byte) 3;
+                        newMatrix[i + 1][j] = (byte) 3;
+                        newMatrix[i + 1][j + 1] = (byte) 3;
+                        ListaMinB.add(new Minucias(i, j, 'B'));
+
+                    }
                 }
             }
-        }
+   //     }
         matrizFinal = newMatrix;
         pictureFinal = toBufferedImage();
         return pictureFinal;

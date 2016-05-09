@@ -1,3 +1,5 @@
+package Tratamiento;
+
 /**
  * Created by juanp on 5/05/16.
  */
@@ -8,6 +10,7 @@ public class Minucias {
     private int modulo;
     private double angulo;
 
+    // TODO: 9/05/16 Calculo angulos y módulo.
 
     public Minucias(){
         coorY = 0;
