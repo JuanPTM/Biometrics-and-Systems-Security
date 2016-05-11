@@ -21,6 +21,11 @@ public class Minucias {
         coorX = X;
         coorY = Y;
         tipo = C;
+        angulo = Math.atan((double)(Y/X));
+        modulo = Math.sqrt(Math.pow(X,2)+Math.pow(Y,2));
+        System.out.println("El angulo es: "+angulo);
+        System.out.println("El angulo es version coor: "+Math.atan2(Y,X));
+        System.out.println("El angulo es grados: "+Math.toDegrees(angulo));
     }
 
     public int getCoorX() {
