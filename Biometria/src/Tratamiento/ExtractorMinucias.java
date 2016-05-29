@@ -9,10 +9,10 @@ import java.util.LinkedList;
 
 public class ExtractorMinucias {
     private static ExtractorMinucias extmin = null;
-    private BufferedImage mypicture;
-    private BufferedImage pictureFinal;
-    private byte[][] imageMatriz;
-    private byte[][] matrizFinal;
+    private BufferedImage mypicture; /** Imagen inicial */
+    private BufferedImage pictureFinal; /** Almacena la imagen con colores de las minucias*/
+    private byte[][] imageMatriz;  /** Matriz que guarda la imagen en blanco y negro */
+    private byte[][] matrizFinal; /** Matriz que guarda los puntos coloreados de las minucias */
     private LinkedList<Minucias> ListaMinF = new LinkedList<>();
     private LinkedList<Minucias> ListaMinB = new LinkedList<>();
 
@@ -43,6 +43,8 @@ public class ExtractorMinucias {
                 newMatrix[i][j] = imageMatriz[i][j];
             }
         }
+        ListaMinB.clear();
+        ListaMinF.clear();
 
         for (int i = umbral; i < imageMatriz.length - 1 - umbral; i++) {
             for (int j = umbral; j < imageMatriz[i].length - 1 - umbral; j++) {
