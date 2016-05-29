@@ -7,10 +7,10 @@ public class Minucias {
     private int coorX;
     private int coorY;
     private char tipo;
-    private int modulo;
+    private double modulo;
     private double angulo;
 
-    // TODO: 9/05/16 Calculo angulos y módulo.
+    // TODO: 9/05/16 Calculo angulos.
 
     public Minucias(){
         coorY = 0;
@@ -21,11 +21,20 @@ public class Minucias {
         coorX = X;
         coorY = Y;
         tipo = C;
-        angulo = Math.atan((double)(Y/X));
         modulo = Math.sqrt(Math.pow(X,2)+Math.pow(Y,2));
-        System.out.println("El angulo es: "+angulo);
-        System.out.println("El angulo es version coor: "+Math.atan2(Y,X));
-        System.out.println("El angulo es grados: "+Math.toDegrees(angulo));
+
+
+    }
+
+    public Minucias(int X, int Y, char C,double angle){
+        coorX = X;
+        coorY = Y;
+        tipo = C;
+        angulo = angle;
+        modulo = Math.sqrt(Math.pow(X,2)+Math.pow(Y,2));
+
+        System.out.println("El angulo es: "+angle);
+
     }
 
     public int getCoorX() {
@@ -52,11 +61,11 @@ public class Minucias {
         this.tipo = tipo;
     }
 
-    public int getModulo() {
+    public double getModulo() {
         return modulo;
     }
 
-    public void setModulo(int modulo) {
+    public void setModulo(double modulo) {
         this.modulo = modulo;
     }
 

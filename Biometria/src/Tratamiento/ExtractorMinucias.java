@@ -71,7 +71,7 @@ public class ExtractorMinucias {
                         newMatrix[i + 1][j] = (byte) 2;
                         newMatrix[i + 1][j + 1] = (byte) 2;
                         newMatrix[i][j] = (byte) 2;
-                        ListaMinF.add(new Minucias(i, j, 'F'));
+                        ListaMinF.add(new Minucias(i, j, 'F',calculoAngulo(i,j)));
 
                     } else if (valor == 3 && p == 1) { // minucia bifurcacion
 
@@ -84,7 +84,7 @@ public class ExtractorMinucias {
                         newMatrix[i + 1][j - 1] = (byte) 3;
                         newMatrix[i + 1][j] = (byte) 3;
                         newMatrix[i + 1][j + 1] = (byte) 3;
-                        ListaMinB.add(new Minucias(i, j, 'B'));
+                        ListaMinB.add(new Minucias(i, j, 'B',calculoAngulo(i,j)));
 
                     }
                 }
@@ -126,5 +126,14 @@ public class ExtractorMinucias {
             }
         }
         return newImage;
+    }
+
+    private double calculoAngulo(int x, int y){
+        Gradiente.setImage(imageMatriz);
+        Gradiente.setVentana(3);
+        double divid = Gradiente.getDivi(x,y);
+        double divisor = Gradiente.getdivisor(x,y);
+
+        return Math.toDegrees(Math.atan(divid/divisor)/2);
     }
 }
