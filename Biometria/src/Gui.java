@@ -1,5 +1,6 @@
 import Filtros.Filtros;
 import Filtros.Thinner;
+import Matching.MatchingAlg;
 import Tratamiento.ExtractorMinucias;
 
 import javax.imageio.ImageIO;
@@ -33,6 +34,7 @@ public class Gui extends JFrame {
     private JButton filtroBinario2Button;
     private JButton adelgazamientoButton;
     private JButton obtenerMinuciasButton;
+    private JButton pruebaMatching1Button;
 
     public Gui() {
         super("Práctica 2");
@@ -220,6 +222,27 @@ public class Gui extends JFrame {
                 if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
                     ExtractorMinucias n = ExtractorMinucias.getInstance(Filtros.getInstance().getMypicture());
                     Filtros.getInstance().setPictureFinal(n.getMinucias(50));
+                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
+
+                    imagenFinPanel.removeAll();
+                    imagenFinPanel.add(picLabel);
+                    imagenFinPanel.revalidate();
+                    imagenFinPanel.repaint();
+                }
+            }
+        });
+
+        pruebaMatching1Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
+                    ExtractorMinucias n = ExtractorMinucias.getInstance();
+                    MatchingAlg m = MatchingAlg.getInstance();
+                    m.setMinucias(n.getListaMinB());
+                    m.setMatrix(n.getImageMatriz());
+                    m.compute();
+
+
                     JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
 
                     imagenFinPanel.removeAll();

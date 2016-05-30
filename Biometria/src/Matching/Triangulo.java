@@ -2,10 +2,12 @@ package Matching;
 
 import Tratamiento.Minucias;
 
+import java.io.Serializable;
+
 /**
  * Created by JuanP on 29/05/2016.
  */
-public class Triangulo {
+public class Triangulo implements Serializable {
 
     private Minucias M1;
     private Minucias M2;

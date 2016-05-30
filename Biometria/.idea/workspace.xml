@@ -27,57 +27,24 @@
         <entry file="file://$PROJECT_DIR$/src/Gui.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="217" column="18" selection-start-line="217" selection-start-column="18" selection-end-line="217" selection-end-column="18" />
+              <caret line="244" column="0" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
               <folding>
-                <element signature="class#2324:2813" expanded="false" />
-                <element signature="class#2859:3445" expanded="false" />
+                <element signature="class#2396:2885" expanded="false" />
+                <element signature="class#2931:3517" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Minucias.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tratamiento/Minucias.java">
+      <file leaf-file-name="MatchingAlg.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Matching/MatchingAlg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gradiente.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tratamiento/Gradiente.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Thinner.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Filtros/Thinner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="20" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="20" />
-              <folding>
-                <element signature="e#292#293#0" expanded="false" />
-                <element signature="e#319#320#0" expanded="false" />
-                <element signature="e#359#360#0" expanded="false" />
-                <element signature="e#390#391#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExtractorMinucias.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Tratamiento/ExtractorMinucias.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.7586207">
-              <caret line="111" column="36" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.7136432">
+              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#saveTriangle#0;class#MatchingAlg#0" expanded="false" />
+                <element signature="method#loadTriangle#0;class#MatchingAlg#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -87,73 +54,23 @@
         <entry file="file://$PROJECT_DIR$/src/Matching/Triangulo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
               <folding>
-                <element signature="e#719#720#0" expanded="true" />
-                <element signature="e#744#745#0" expanded="true" />
-                <element signature="e#775#776#0" expanded="true" />
-                <element signature="e#800#801#0" expanded="true" />
-                <element signature="e#831#832#0" expanded="true" />
-                <element signature="e#856#857#0" expanded="true" />
-                <element signature="e#887#888#0" expanded="true" />
-                <element signature="e#917#918#0" expanded="true" />
-                <element signature="e#948#949#0" expanded="true" />
-                <element signature="e#978#979#0" expanded="true" />
-                <element signature="e#1009#1010#0" expanded="true" />
-                <element signature="e#1036#1037#0" expanded="true" />
-                <element signature="e#1067#1068#0" expanded="true" />
-                <element signature="e#1094#1095#0" expanded="true" />
-                <element signature="e#1125#1126#0" expanded="true" />
-                <element signature="e#1152#1153#0" expanded="true" />
-                <element signature="e#1183#1184#0" expanded="true" />
-                <element signature="e#1210#1211#0" expanded="true" />
-                <element signature="e#1239#1240#0" expanded="true" />
-                <element signature="e#1264#1265#0" expanded="true" />
-                <element signature="e#1293#1294#0" expanded="true" />
-                <element signature="e#1318#1319#0" expanded="true" />
-                <element signature="e#1347#1348#0" expanded="true" />
-                <element signature="e#1372#1373#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinkedList.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_71/src.zip!/java/util/LinkedList.java">
+      <file leaf-file-name="ExtractorMinucias.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tratamiento/ExtractorMinucias.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="447" column="16" selection-start-line="447" selection-start-column="16" selection-end-line="447" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Filtros.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Filtros/Filtros.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
+              <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
               <folding>
-                <element signature="e#444#445#0" expanded="false" />
-                <element signature="e#476#477#0" expanded="false" />
-                <element signature="e#533#534#0" expanded="false" />
-                <element signature="e#575#576#0" expanded="false" />
-                <element signature="e#621#622#0" expanded="false" />
-                <element signature="e#656#657#0" expanded="false" />
-                <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
-                <element signature="method#Filtros#0;class#Filtros#0" expanded="false" />
-                <element signature="e#2163#2164#0" expanded="false" />
-                <element signature="e#2192#2193#0" expanded="false" />
-                <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
-                <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
-                <element signature="method#getEcualizar#0;class#Filtros#0" expanded="false" />
-                <element signature="e#5884#5885#0" expanded="false" />
-                <element signature="e#5929#5930#0" expanded="false" />
-                <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
-                <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
-                <element signature="method#binaryFilterRuido#0;class#Filtros#0" expanded="false" />
-                <element signature="method#adelgazamiento#0;class#Filtros#0" expanded="false" />
-                <element signature="method#adelgazar#0;class#Filtros#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1210#1211#0" expanded="true" />
+                <element signature="e#1244#1245#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,7 +81,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-              <folding />
+              <folding>
+                <element signature="e#64#65#0" expanded="true" />
+                <element signature="e#96#97#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -174,8 +94,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Singleton" />
         <option value="Class" />
+        <option value="Singleton" />
       </list>
     </option>
   </component>
@@ -192,20 +112,21 @@
         <option value="/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar!/sun/misc/Unsafe.class" />
         <option value="$PROJECT_DIR$/src/Filtros.java" />
         <option value="$PROJECT_DIR$/src/Thinner.java" />
-        <option value="$PROJECT_DIR$/src/Gui.form" />
         <option value="$PROJECT_DIR$/src/Filtros/ExtractorMinucias.java" />
         <option value="$PROJECT_DIR$/src/Minucias.java" />
         <option value="$PROJECT_DIR$/src/Filtros/Filtros.java" />
         <option value="$PROJECT_DIR$/src/Filtros/thin2.java" />
         <option value="$PROJECT_DIR$/src/Filtros/ZhangSuen.java" />
         <option value="$PROJECT_DIR$/src/ExtractorMinucias.java" />
-        <option value="$PROJECT_DIR$/src/Gui.java" />
         <option value="$PROJECT_DIR$/src/Filtros/Thinner.java" />
         <option value="$PROJECT_DIR$/src/Tratamiento/Minucias.java" />
         <option value="$PROJECT_DIR$/src/Tratamiento/Gradiente.java" />
-        <option value="$PROJECT_DIR$/src/Tratamiento/ExtractorMinucias.java" />
         <option value="$PROJECT_DIR$/src/Matching/Arista.java" />
+        <option value="$PROJECT_DIR$/src/Gui.form" />
         <option value="$PROJECT_DIR$/src/Matching/Triangulo.java" />
+        <option value="$PROJECT_DIR$/src/Tratamiento/ExtractorMinucias.java" />
+        <option value="$PROJECT_DIR$/src/Gui.java" />
+        <option value="$PROJECT_DIR$/src/Matching/MatchingAlg.java" />
       </list>
     </option>
   </component>
@@ -268,8 +189,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -335,12 +254,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Tratamiento" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Biometria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Biometria" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Matching" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -820,11 +759,13 @@
       <workItem from="1462952264657" duration="3175000" />
       <workItem from="1463034821710" duration="9005000" />
       <workItem from="1464540493901" duration="4189000" />
+      <workItem from="1464622980525" duration="2810000" />
+      <workItem from="1464626240008" duration="2876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89479000" />
+    <option name="totallyTimeSpent" value="95165000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -884,18 +825,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Tratamiento/Gradiente.java</url>
-          <line>60</line>
-          <properties />
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="52" />
+      <option name="time" value="53" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -904,13 +837,46 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Matching/Triangulo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tratamiento/ExtractorMinucias.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding>
+            <element signature="e#64#65#0" expanded="true" />
+            <element signature="e#96#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="217" column="18" selection-start-line="217" selection-start-column="18" selection-end-line="217" selection-end-column="18" />
           <folding>
-            <element signature="class#2324:2813" expanded="false" />
-            <element signature="class#2859:3445" expanded="false" />
+            <element signature="class#2396:2885" expanded="false" />
+            <element signature="class#2931:3517" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -935,12 +901,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="20" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="20" />
-          <folding>
-            <element signature="e#292#293#0" expanded="false" />
-            <element signature="e#319#320#0" expanded="false" />
-            <element signature="e#359#360#0" expanded="false" />
-            <element signature="e#390#391#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -950,7 +911,27 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Matching/Triangulo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_71/src.zip!/java/util/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="447" column="16" selection-start-line="447" selection-start-column="16" selection-end-line="447" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -959,21 +940,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
           <folding>
-            <element signature="e#444#445#0" expanded="false" />
-            <element signature="e#476#477#0" expanded="false" />
-            <element signature="e#533#534#0" expanded="false" />
-            <element signature="e#575#576#0" expanded="false" />
-            <element signature="e#621#622#0" expanded="false" />
-            <element signature="e#656#657#0" expanded="false" />
             <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
             <element signature="method#Filtros#0;class#Filtros#0" expanded="false" />
-            <element signature="e#2163#2164#0" expanded="false" />
-            <element signature="e#2192#2193#0" expanded="false" />
             <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
             <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
             <element signature="method#getEcualizar#0;class#Filtros#0" expanded="false" />
-            <element signature="e#5884#5885#0" expanded="false" />
-            <element signature="e#5929#5930#0" expanded="false" />
             <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
             <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
             <element signature="method#binaryFilterRuido#0;class#Filtros#0" expanded="false" />
@@ -987,7 +958,87 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding>
+            <element signature="e#64#65#0" expanded="true" />
+            <element signature="e#96#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="217" column="18" selection-start-line="217" selection-start-column="18" selection-end-line="217" selection-end-column="18" />
+          <folding>
+            <element signature="class#2396:2885" expanded="false" />
+            <element signature="class#2931:3517" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tratamiento/Minucias.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tratamiento/Gradiente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Filtros/Thinner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tratamiento/ExtractorMinucias.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Filtros/Filtros.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
+          <folding>
+            <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
+            <element signature="method#Filtros#0;class#Filtros#0" expanded="false" />
+            <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getEcualizar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilterRuido#0;class#Filtros#0" expanded="false" />
+            <element signature="method#adelgazamiento#0;class#Filtros#0" expanded="false" />
+            <element signature="method#adelgazar#0;class#Filtros#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding>
+            <element signature="e#64#65#0" expanded="true" />
+            <element signature="e#96#97#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1003,8 +1054,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#2324:2813" expanded="false" />
-            <element signature="class#2859:3445" expanded="false" />
+            <element signature="class#2396:2885" expanded="false" />
+            <element signature="class#2931:3517" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1014,21 +1065,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="109" column="55" selection-start-line="109" selection-start-column="55" selection-end-line="109" selection-end-column="55" />
           <folding>
-            <element signature="e#444#445#0" expanded="false" />
-            <element signature="e#476#477#0" expanded="false" />
-            <element signature="e#533#534#0" expanded="false" />
-            <element signature="e#575#576#0" expanded="false" />
-            <element signature="e#621#622#0" expanded="false" />
-            <element signature="e#656#657#0" expanded="false" />
             <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
             <element signature="method#Filtros#0;class#Filtros#0" expanded="false" />
-            <element signature="e#2163#2164#0" expanded="false" />
-            <element signature="e#2192#2193#0" expanded="false" />
             <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
             <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
             <element signature="method#getEcualizar#0;class#Filtros#0" expanded="false" />
-            <element signature="e#5884#5885#0" expanded="false" />
-            <element signature="e#5929#5930#0" expanded="false" />
             <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
             <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
             <element signature="method#binaryFilterRuido#0;class#Filtros#0" expanded="false" />
@@ -1065,8 +1106,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#2324:2813" expanded="false" />
-            <element signature="class#2859:3445" expanded="false" />
+            <element signature="class#2396:2885" expanded="false" />
+            <element signature="class#2931:3517" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1076,21 +1117,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
-            <element signature="e#444#445#0" expanded="false" />
-            <element signature="e#476#477#0" expanded="false" />
-            <element signature="e#533#534#0" expanded="false" />
-            <element signature="e#575#576#0" expanded="false" />
-            <element signature="e#621#622#0" expanded="false" />
-            <element signature="e#656#657#0" expanded="false" />
             <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
             <element signature="method#Filtros#0;class#Filtros#0" expanded="false" />
-            <element signature="e#2163#2164#0" expanded="false" />
-            <element signature="e#2192#2193#0" expanded="false" />
             <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
             <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
             <element signature="method#getEcualizar#0;class#Filtros#0" expanded="false" />
-            <element signature="e#5884#5885#0" expanded="false" />
-            <element signature="e#5929#5930#0" expanded="false" />
             <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
             <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
             <element signature="method#binaryFilterRuido#0;class#Filtros#0" expanded="false" />
@@ -1120,8 +1151,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="69" column="51" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
           <folding>
-            <element signature="class#2324:2813" expanded="false" />
-            <element signature="class#2859:3445" expanded="false" />
+            <element signature="class#2396:2885" expanded="false" />
+            <element signature="class#2931:3517" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1131,21 +1162,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#444#445#0" expanded="false" />
-            <element signature="e#476#477#0" expanded="false" />
-            <element signature="e#533#534#0" expanded="false" />
-            <element signature="e#575#576#0" expanded="false" />
-            <element signature="e#621#622#0" expanded="false" />
-            <element signature="e#656#657#0" expanded="false" />
             <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
             <element signature="method#Filtros#0;class#Filtros#0" expanded="false" />
-            <element signature="e#2163#2164#0" expanded="false" />
-            <element signature="e#2192#2193#0" expanded="false" />
             <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
             <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
             <element signature="method#getEcualizar#0;class#Filtros#0" expanded="false" />
-            <element signature="e#5884#5885#0" expanded="false" />
-            <element signature="e#5929#5930#0" expanded="false" />
             <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
             <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
             <element signature="method#binaryFilterRuido#0;class#Filtros#0" expanded="false" />
@@ -1175,8 +1196,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#2324:2813" expanded="false" />
-            <element signature="class#2859:3445" expanded="false" />
+            <element signature="class#2396:2885" expanded="false" />
+            <element signature="class#2931:3517" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1203,69 +1224,31 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/Matching/Arista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.4527736">
+          <caret line="17" column="136" selection-start-line="17" selection-start-column="136" selection-end-line="17" selection-end-column="136" />
+        </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_71/src.zip!/java/util/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.018518519">
+          <caret line="447" column="16" selection-start-line="447" selection-start-column="16" selection-end-line="447" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Filtros/Thinner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="20" />
-          <folding>
-            <element signature="e#292#293#0" expanded="false" />
-            <element signature="e#319#320#0" expanded="false" />
-            <element signature="e#359#360#0" expanded="false" />
-            <element signature="e#390#391#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="217" column="18" selection-start-line="217" selection-start-column="18" selection-end-line="217" selection-end-column="18" />
-          <folding>
-            <element signature="class#2324:2813" expanded="false" />
-            <element signature="class#2859:3445" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Filtros/Filtros.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="1.6851852">
           <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
           <folding>
-            <element signature="e#444#445#0" expanded="false" />
-            <element signature="e#476#477#0" expanded="false" />
-            <element signature="e#533#534#0" expanded="false" />
-            <element signature="e#575#576#0" expanded="false" />
-            <element signature="e#621#622#0" expanded="false" />
-            <element signature="e#656#657#0" expanded="false" />
             <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
             <element signature="method#Filtros#0;class#Filtros#0" expanded="false" />
-            <element signature="e#2163#2164#0" expanded="false" />
-            <element signature="e#2192#2193#0" expanded="false" />
             <element signature="method#isLoad#0;class#Filtros#0" expanded="false" />
             <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
             <element signature="method#getEcualizar#0;class#Filtros#0" expanded="false" />
-            <element signature="e#5884#5885#0" expanded="false" />
-            <element signature="e#5929#5930#0" expanded="false" />
             <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
             <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
             <element signature="method#binaryFilterRuido#0;class#Filtros#0" expanded="false" />
@@ -1275,55 +1258,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tratamiento/Gradiente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_71/src.zip!/java/util/LinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="447" column="16" selection-start-line="447" selection-start-column="16" selection-end-line="447" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tratamiento/Minucias.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.4074074">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Matching/Arista.java">
+    <entry file="file://$PROJECT_DIR$/src/Tratamiento/Gradiente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.4527736">
-          <caret line="17" column="136" selection-start-line="17" selection-start-column="136" selection-end-line="17" selection-end-column="136" />
+        <state vertical-scroll-proportion="1.2037038">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
           <folding>
-            <element signature="e#832#833#0" expanded="true" />
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#890#891#0" expanded="true" />
-            <element signature="e#918#919#0" expanded="true" />
-            <element signature="e#957#958#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-            <element signature="e#1020#1021#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1167#1168#0" expanded="true" />
-            <element signature="e#1203#1204#0" expanded="true" />
-            <element signature="e#1239#1240#0" expanded="true" />
-            <element signature="e#1269#1270#0" expanded="true" />
-            <element signature="e#1317#1318#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
-            <element signature="e#1390#1391#0" expanded="true" />
-            <element signature="e#1421#1422#0" expanded="true" />
-            <element signature="e#1469#1470#0" expanded="true" />
-            <element signature="e#1509#1510#0" expanded="true" />
+            <element signature="e#64#65#0" expanded="true" />
+            <element signature="e#96#97#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1331,42 +1288,71 @@
     <entry file="file://$PROJECT_DIR$/src/Matching/Triangulo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
           <folding>
-            <element signature="e#719#720#0" expanded="true" />
-            <element signature="e#744#745#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#800#801#0" expanded="true" />
-            <element signature="e#831#832#0" expanded="true" />
-            <element signature="e#856#857#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#917#918#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
-            <element signature="e#1009#1010#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="e#1067#1068#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-            <element signature="e#1125#1126#0" expanded="true" />
-            <element signature="e#1152#1153#0" expanded="true" />
-            <element signature="e#1183#1184#0" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#1239#1240#0" expanded="true" />
-            <element signature="e#1264#1265#0" expanded="true" />
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1318#1319#0" expanded="true" />
-            <element signature="e#1347#1348#0" expanded="true" />
-            <element signature="e#1372#1373#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Filtros/Thinner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.018518519">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tratamiento/ExtractorMinucias.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.7586207">
-          <caret line="111" column="36" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="244" column="0" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
+          <folding>
+            <element signature="class#2396:2885" expanded="false" />
+            <element signature="class#2931:3517" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/triangulo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui.form">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Matching/MatchingAlg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7136432">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#saveTriangle#0;class#MatchingAlg#0" expanded="false" />
+            <element signature="method#loadTriangle#0;class#MatchingAlg#0" expanded="false" />
           </folding>
         </state>
       </provider>
