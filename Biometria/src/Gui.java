@@ -199,15 +199,6 @@ public class Gui extends JFrame {
                     Filtros.getInstance().setPictureFinal(n.getResult());
                     JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
 
-
-                    File outputfile = new File("image.jpg");
-                    try {
-                        ImageIO.write(Filtros.getInstance().getPictureFinal(), "jpg", outputfile);
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
-
-
                     imagenFinPanel.removeAll();
                     imagenFinPanel.add(picLabel);
                     imagenFinPanel.revalidate();
@@ -220,8 +211,10 @@ public class Gui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
+                    String s = JOptionPane.showInputDialog(rootPane,"Introduzca el tamaño de la ventana en pixeles","Introduzca un valor");
+                    int umbral = Integer.parseInt(s);
                     ExtractorMinucias n = ExtractorMinucias.getInstance(Filtros.getInstance().getMypicture());
-                    Filtros.getInstance().setPictureFinal(n.getMinucias(50));
+                    Filtros.getInstance().setPictureFinal(n.getMinucias(umbral)); // TODO: 31/05/2016 umbrales laterales, umbral arriba y umbral abajo - comprobar errores
                     JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
 
                     imagenFinPanel.removeAll();
@@ -242,7 +235,10 @@ public class Gui extends JFrame {
                     m.setMatrix(n.getImageMatriz());
                     m.compute();
 
-
+                    if (m.compararHuellas()){
+                        JOptionPane.showMessageDialog(rootPane,"Las huella corresponde a la almacenada.","Proceso completado",JOptionPane.INFORMATION_MESSAGE);
+                    }else
+                        JOptionPane.showMessageDialog(rootPane,"La huella no corresponde con la almacenada.","Proceso completado",JOptionPane.ERROR_MESSAGE);
                     JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
 
                     imagenFinPanel.removeAll();

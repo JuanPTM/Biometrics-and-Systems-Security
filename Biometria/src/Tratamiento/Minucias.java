@@ -1,9 +1,11 @@
 package Tratamiento;
 
+import java.io.Serializable;
+
 /**
  * Created by juanp on 5/05/16.
  */
-public class Minucias {
+public class Minucias implements Serializable {
     private int coorX;
     private int coorY;
     private char tipo;
@@ -78,6 +80,7 @@ public class Minucias {
     }
 
     public String toString (){
-        return (" Minucia de tipo "+tipo+" en las coordenadas ("+coorX+","+coorY+") con módulo "+ modulo +" y con un ángulo de "+angulo);
+        //return (" Minucia de tipo "+tipo+" en las coordenadas ("+coorX+","+coorY+") con módulo "+ modulo +" y con un ángulo de "+angulo);
+        return (coorX+"\t"+coorY+"\t"+tipo+"\t"+modulo+"\t"+angulo);
     }
 }

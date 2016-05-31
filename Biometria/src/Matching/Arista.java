@@ -2,10 +2,13 @@ package Matching;
 
 import Tratamiento.Minucias;
 
+import java.io.Serializable;
+import java.io.StringReader;
+
 /**
  * Created by JuanP on 29/05/2016.
  */
-public class Arista {
+public class Arista implements Serializable {
     private Minucias origen;
     private Minucias destino;
     private int vectX;
@@ -64,5 +67,9 @@ public class Arista {
 
     public void setLongitud(double longitud) {
         this.longitud = longitud;
+    }
+
+    public String toString(){
+        return (origen.toString()+"\t"+destino.toString()+"\t"+vectX+"\t"+vectY+"\t"+longitud);
     }
 }

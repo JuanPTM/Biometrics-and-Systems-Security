@@ -58,7 +58,7 @@ public class Gradiente {
     }
 
     public static double getdivisor(int x, int y){
-        double suma = 0;
+        double suma = 1;
 
         for (int i = -(ventana/2); i <= ventana/2; i++) {
             for (int j = -(ventana/2); j <= ventana/2; j++) {

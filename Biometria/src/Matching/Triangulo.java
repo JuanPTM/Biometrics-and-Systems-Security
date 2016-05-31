@@ -119,4 +119,8 @@ public class Triangulo implements Serializable {
         double divisor = 2 * a.getLongitud() * b.getLongitud();
         return Math.toDegrees(Math.acos(dividendo / divisor));
     }
+
+    public String toString(){
+        return (M1.toString()+"\t"+M2.toString()+"\t"+M3.toString()+"\t"+xCentro+"\t"+yCentro+"\t"+ang1+"\t"+ang2+"\t"+ang3+"\t"+area+"\t"+A1.toString()+"\t"+A2.toString()+"\t"+A3.toString());
+    }
 }
