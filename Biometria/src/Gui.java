@@ -3,16 +3,19 @@ import Filtros.Thinner;
 import Matching.MatchingAlg;
 import Tratamiento.ExtractorMinucias;
 
-import javax.imageio.ImageIO;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.IOException;
 
 /**
  * Created by juanp on 16/04/16.
+ * <p>
+ * Interfaz gráfica del proyecto.
+ *
+ * @author Juan Pedro Torres Muñoz.
  */
 public class Gui extends JFrame {
     private JPanel RootPanel;
@@ -35,9 +38,13 @@ public class Gui extends JFrame {
     private JButton adelgazamientoButton;
     private JButton obtenerMinuciasButton;
     private JButton pruebaMatching1Button;
+    private JButton guardarMinuciasButton;
 
+    /***
+     * Método que crea e inicializa la interfaz grafica.
+     */
     public Gui() {
-        super("Práctica 2");
+        super("Práctica Biometría");
         init();
         addListener();
 
@@ -68,6 +75,13 @@ public class Gui extends JFrame {
                     Filtros.getInstance().loadImage(f.getAbsolutePath());
                     JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getMypicture()));
 
+                    JLabel picLabel2 = new JLabel(new ImageIcon(Filtros.getInstance().getGrisImg()));
+
+                    imagenFinPanel.removeAll();
+                    imagenFinPanel.add(picLabel2);
+                    imagenFinPanel.revalidate();
+                    imagenFinPanel.repaint();
+
                     imagenFuentePanel.add(picLabel);
                     imagenFuentePanel.revalidate();
                     imagenFuentePanel.repaint();
@@ -76,7 +90,7 @@ public class Gui extends JFrame {
             }
         });
 
-        gris.addActionListener(new ActionListener() {
+/*        gris.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (Filtros.getInstance().isLoad()) {
@@ -103,7 +117,7 @@ public class Gui extends JFrame {
                     imagenFinPanel.repaint();
                 }
             }
-        });
+        });*/
 
         destinoAFuenteButton.addActionListener(new ActionListener() {
             @Override
@@ -126,22 +140,22 @@ public class Gui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
-                    String s = JOptionPane.showInputDialog(rootPane,"Introduzca el valor del umbral","Introduzca un valor");
+                    String s = JOptionPane.showInputDialog(rootPane, "Introduzca el valor del umbral", "Introduzca un valor");
 
                     try {
                         int umbral = Integer.parseInt(s);
-                        if (umbral >=0 && umbral<=255 ) {
+                        if (umbral >= 0 && umbral <= 255) {
                             JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().thresholdFilter(umbral)));
 
                             imagenFinPanel.removeAll();
                             imagenFinPanel.add(picLabel);
                             imagenFinPanel.revalidate();
                             imagenFinPanel.repaint();
-                        }else{
-                            JOptionPane.showMessageDialog(rootPane,"El valor debe estar entre 0 y 255","Error al intentar umbralizar",JOptionPane.ERROR_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(rootPane, "El valor debe estar entre 0 y 255", "Error al intentar umbralizar", JOptionPane.ERROR_MESSAGE);
                         }
                     } catch (NumberFormatException e1) {
-                        JOptionPane.showMessageDialog(rootPane,"El valor debe estar entre 0 y 255","Error al intentar umbralizar",JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(rootPane, "El valor debe estar entre 0 y 255", "Error al intentar umbralizar", JOptionPane.ERROR_MESSAGE);
                     } catch (HeadlessException e1) {
                         e1.printStackTrace();
                     }
@@ -211,16 +225,27 @@ public class Gui extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
-                    String s = JOptionPane.showInputDialog(rootPane,"Introduzca el tamaño de la ventana en pixeles","Introduzca un valor");
-                    int umbral = Integer.parseInt(s);
-                    ExtractorMinucias n = ExtractorMinucias.getInstance(Filtros.getInstance().getMypicture());
-                    Filtros.getInstance().setPictureFinal(n.getMinucias(umbral)); // TODO: 31/05/2016 umbrales laterales, umbral arriba y umbral abajo - comprobar errores
-                    JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
+                    try {
+                        String s = JOptionPane.showInputDialog(rootPane, "Introduzca el tamaño de la ventana lateral en pixeles", "Introduzca un valor");
+                        int umbralLateral = Integer.parseInt(s);
+                        s = JOptionPane.showInputDialog(rootPane, "Introduzca el tamaño de la ventana superior en pixeles", "Introduzca un valor");
+                        int umbralSuperior = Integer.parseInt(s);
+                        s = JOptionPane.showInputDialog(rootPane, "Introduzca el tamaño de la ventana inferior en pixeles", "Introduzca un valor");
+                        int umbralInferior = Integer.parseInt(s);
+                        if (umbralInferior > 0 && umbralLateral >0 && umbralSuperior >0) {
+                            ExtractorMinucias n = ExtractorMinucias.getInstance(Filtros.getInstance().getMypicture());
+                            Filtros.getInstance().setPictureFinal(n.getMinucias(umbralLateral, umbralSuperior, umbralInferior));
+                            JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
 
-                    imagenFinPanel.removeAll();
-                    imagenFinPanel.add(picLabel);
-                    imagenFinPanel.revalidate();
-                    imagenFinPanel.repaint();
+                            imagenFinPanel.removeAll();
+                            imagenFinPanel.add(picLabel);
+                            imagenFinPanel.revalidate();
+                            imagenFinPanel.repaint();
+                        }else
+                            JOptionPane.showMessageDialog(rootPane, "Todos los valores de los margenes deben ser mayores de 0", "Error al intentar obtener las minucias.", JOptionPane.ERROR_MESSAGE);
+                    } catch (NumberFormatException e1) {
+                        JOptionPane.showMessageDialog(rootPane, "El valor debe ser un valor entre 0 y el máximo tamaño de la imagen.", "Error al intentar obtener las minucias.", JOptionPane.ERROR_MESSAGE);
+                    }
                 }
             }
         });
@@ -232,19 +257,32 @@ public class Gui extends JFrame {
                     ExtractorMinucias n = ExtractorMinucias.getInstance();
                     MatchingAlg m = MatchingAlg.getInstance();
                     m.setMinucias(n.getListaMinB());
-                    m.setMatrix(n.getImageMatriz());
                     m.compute();
 
-                    if (m.compararHuellas()){
-                        JOptionPane.showMessageDialog(rootPane,"Las huella corresponde a la almacenada.","Proceso completado",JOptionPane.INFORMATION_MESSAGE);
-                    }else
-                        JOptionPane.showMessageDialog(rootPane,"La huella no corresponde con la almacenada.","Proceso completado",JOptionPane.ERROR_MESSAGE);
+                    if (m.compararHuellas()) {
+                        JOptionPane.showMessageDialog(rootPane, "Las huella corresponde a la almacenada("+m.probAcierto()*100+"%).", "Proceso completado", JOptionPane.INFORMATION_MESSAGE);
+                    } else
+                        JOptionPane.showMessageDialog(rootPane, "La huella no corresponde con la almacenada("+m.probAcierto()*100+"%).", "Proceso completado", JOptionPane.ERROR_MESSAGE);
                     JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
 
                     imagenFinPanel.removeAll();
                     imagenFinPanel.add(picLabel);
                     imagenFinPanel.revalidate();
                     imagenFinPanel.repaint();
+                }
+            }
+        });
+
+        guardarMinuciasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (Filtros.getInstance().isLoad() && Filtros.getInstance().isGrey()) {
+                    ExtractorMinucias n = ExtractorMinucias.getInstance();
+                    MatchingAlg m = MatchingAlg.getInstance();
+                    m.setMinucias(n.getListaMinB());
+                    m.compute();
+                    m.guardarTriangulos();
+                    JOptionPane.showMessageDialog(rootPane, "Las huella ha sido almacenada.", "Proceso completado", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         });

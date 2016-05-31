@@ -7,7 +7,12 @@ import java.io.IOException;
 
 /**
  * Created by juanp on 20/04/16.
+ * <p>
+ * Clase encargada de trabajar con las imagenes proporcionando todas las operaciones.
+ *
+ * @author Juan Pedro Torres Muñoz
  */
+
 
 public class Filtros {
     private static Filtros ourInstance = new Filtros();
@@ -16,18 +21,38 @@ public class Filtros {
     private byte[][] imageMatriz;
     private boolean isGrey = false;
 
+    /***
+     * Método para obtener la imagen MyPicture, de tipo BufferedImage
+     *
+     * @return imagen fuente sobre la que se trabaja.
+     */
     public BufferedImage getMypicture() {
         return mypicture;
     }
 
+    /***
+     * Método que asigna una nueva imagen a la imagen fuente sobre la que se trabaja.
+     *
+     * @param mypicture nuevo valor para la imagen fuente.
+     */
     public void setMypicture(BufferedImage mypicture) {
         this.mypicture = mypicture;
     }
 
+    /***
+     * Método para obtener la imagen final tras procesarla.
+     *
+     * @return imagen tras el procesamiento.
+     */
     public BufferedImage getPictureFinal() {
         return pictureFinal;
     }
 
+    /***
+     * Método que asigna una nueva imagen a la imagen final y refresca el valor de la matriz de bytes.
+     *
+     * @param pictureFinal nueva imagen para la imagen final.
+     */
     public void setPictureFinal(BufferedImage pictureFinal) {
         this.pictureFinal = pictureFinal;
         for (int i = 0; i < pictureFinal.getHeight(); i++) {
@@ -38,15 +63,22 @@ public class Filtros {
 
     }
 
+    /***
+     * Método que permite el uso del patron Singleton.
+     *
+     * @return Instacia de la clase Filtros con la que se esta trabajando.
+     */
     public static Filtros getInstance() {
         if (ourInstance == null)
             ourInstance = new Filtros();
         return ourInstance;
     }
 
-    private Filtros() {
-    }
-
+    /***
+     * Método que transforma la imagen fuente en escala de grises y la devuelve en un BufferedImage.
+     *
+     * @return Imagen fuente en escala de grises.
+     */
     public BufferedImage getGrisImg() {
         BufferedImage newImage = new BufferedImage(mypicture.getWidth(),
                 mypicture.getHeight(), mypicture.getType());
@@ -78,10 +110,20 @@ public class Filtros {
 
     }
 
+    /***
+     * Método para comprobar si la imagen ha sido pasada a escala de grises.
+     *
+     * @return true si la imagen ha sido pasada a gris.
+     */
     public boolean isGrey() {
         return isGrey;
     }
 
+    /***
+     * Método que carga la una imagen en la imagen fuente e inicializa las estructuras.
+     *
+     * @param path ruta de la imagen a abrir.
+     */
     public void loadImage(String path) {
 
         try {
@@ -93,6 +135,11 @@ public class Filtros {
         }
     }
 
+    /***
+     * Método que comprueba si hay cargada una imagen.
+     *
+     * @return true en caso de que exista una imagen cargada, false en caso contrario.
+     */
     public boolean isLoad() {
         if (mypicture != null)
             return true;
@@ -100,23 +147,12 @@ public class Filtros {
             return false;
     }
 
-    private int[] getHistogram() {
-        int[] histogram = new int[256];
-        for (int i : histogram
-                ) {
-            histogram[i] = 0;
-        }
-        int valueGrey;
-        for (int i = 0; i < mypicture.getHeight(); i++) {
-            for (int j = 0; j < mypicture.getWidth(); j++) {
-                valueGrey = mypicture.getRGB(j, i) & 0xFF;
-                histogram[valueGrey]++;
-            }
-        }
-
-        return histogram;
-    }
-
+    /***
+     * Método que umbraliza la imagen.
+     *
+     * @param umbral umbral a considerar durante la binarización.
+     * @return imagen binarizada.
+     */
     public BufferedImage thresholdFilter(int umbral) {
         int valueGrey;
         int blanco = (255 << 8) | 255;
@@ -140,23 +176,11 @@ public class Filtros {
         return newImage;
     }
 
-    private float[] getLUT(int[] histogram) {
-        float[] lut = new float[256];
-        int sum = 0;
-        int valor;
-        float fscala = (float) (255.0 / (mypicture.getHeight() * mypicture.getWidth()));
-        for (int i = 0; i < histogram.length; ++i) {
-            sum += histogram[i];
-            valor = (int) (sum * fscala);
-            if (valor > 255) {
-                lut[i] = 255;
-            } else {
-                lut[i] = valor;
-            }
-        }
-        return lut;
-    }
-
+    /***
+     * Método que ecualiza la imagen.
+     *
+     * @return imagen ecualizada.
+     */
     public BufferedImage getEcualizar() {
         int[] histograma = getHistogram();
         byte[][] newMatrix = new byte[imageMatriz.length][imageMatriz[1].length];
@@ -182,49 +206,18 @@ public class Filtros {
 
     }
 
-    private BufferedImage toBufferedImage() {
-        BufferedImage newImage = new BufferedImage(mypicture.getWidth(),
-                mypicture.getHeight(), mypicture.getType());
-
-        int media;
-        int rgbfinal;
-        for (int i = 0; i < mypicture.getHeight(); i++) {
-            for (int j = 0; j < mypicture.getWidth(); j++) {
-                media = (imageMatriz[i][j] & 0xFF);
-                rgbfinal = (media << 8) | media;
-                rgbfinal = (rgbfinal << 8) | media;
-                newImage.setRGB(j, i, rgbfinal);
-
-            }
-        }
-        return newImage;
-    }
-
+    /***
+     * Metodo que transforma en un BufferedImage la imagen sobre la que se trabaja en la matriz.
+     */
     public void dstToSrc() {
         mypicture = toBufferedImage();
     }
 
-    public BufferedImage smoothing() {
-
-        double[][] kernel = {{0.125, 0.125, 0.125}, {0.125, 0, 0.125}, {0.125, 0.125, 0.125}};
-
-        for (int i = 1; i < imageMatriz.length - 1; i++) {
-            for (int j = 1; j < imageMatriz[i].length - 1; j++) {
-                float suma = 0;
-
-                for (int k = -1; k < 2; k++) {
-                    for (int l = -1; l < 2; l++) {
-                        int valor = imageMatriz[i + k][j + l] & 0xFF;
-                        suma = (float) (suma + (kernel[1 + k][1 + l] * valor));
-                    }
-                }
-                imageMatriz[i][j] = (byte) suma;
-            }
-        }
-        mypicture = toBufferedImage();
-        return mypicture;
-    }
-
+    /***
+     * Método que realiza el filtro binario para rellenar huecos.
+     *
+     * @return imagen con los huecos rellenados.
+     */
     public BufferedImage binaryFilter() {
         byte[][] newMatrix = new byte[imageMatriz.length][imageMatriz[1].length];
         for (int i = 0; i < imageMatriz.length; i++) {
@@ -253,6 +246,11 @@ public class Filtros {
         return pictureFinal;
     }
 
+    /***
+     * Método que realiza un filtro binario para la eliminación de puntos aislados.
+     *
+     * @return imagen con los puntos aislados eliminados.
+     */
     public BufferedImage binaryFilterRuido() {
         byte[][] newMatrix = new byte[imageMatriz.length][imageMatriz[1].length];
         for (int i = 0; i < imageMatriz.length; i++) {
@@ -285,9 +283,80 @@ public class Filtros {
         return pictureFinal;
     }
 
+    private int[] getHistogram() {
+        int[] histogram = new int[256];
+        for (int i : histogram
+                ) {
+            histogram[i] = 0;
+        }
+        int valueGrey;
+        for (int i = 0; i < mypicture.getHeight(); i++) {
+            for (int j = 0; j < mypicture.getWidth(); j++) {
+                valueGrey = mypicture.getRGB(j, i) & 0xFF;
+                histogram[valueGrey]++;
+            }
+        }
 
+        return histogram;
+    }
 
-    public BufferedImage adelgazamiento() {
+    private float[] getLUT(int[] histogram) {
+        float[] lut = new float[256];
+        int sum = 0;
+        int valor;
+        float fscala = (float) (255.0 / (mypicture.getHeight() * mypicture.getWidth()));
+        for (int i = 0; i < histogram.length; ++i) {
+            sum += histogram[i];
+            valor = (int) (sum * fscala);
+            if (valor > 255) {
+                lut[i] = 255;
+            } else {
+                lut[i] = valor;
+            }
+        }
+        return lut;
+    }
+
+    private BufferedImage toBufferedImage() {
+        BufferedImage newImage = new BufferedImage(mypicture.getWidth(),
+                mypicture.getHeight(), mypicture.getType());
+
+        int media;
+        int rgbfinal;
+        for (int i = 0; i < mypicture.getHeight(); i++) {
+            for (int j = 0; j < mypicture.getWidth(); j++) {
+                media = (imageMatriz[i][j] & 0xFF);
+                rgbfinal = (media << 8) | media;
+                rgbfinal = (rgbfinal << 8) | media;
+                newImage.setRGB(j, i, rgbfinal);
+
+            }
+        }
+        return newImage;
+    }
+
+    private BufferedImage smoothing() {
+
+        double[][] kernel = {{0.125, 0.125, 0.125}, {0.125, 0, 0.125}, {0.125, 0.125, 0.125}};
+
+        for (int i = 1; i < imageMatriz.length - 1; i++) {
+            for (int j = 1; j < imageMatriz[i].length - 1; j++) {
+                float suma = 0;
+
+                for (int k = -1; k < 2; k++) {
+                    for (int l = -1; l < 2; l++) {
+                        int valor = imageMatriz[i + k][j + l] & 0xFF;
+                        suma = (float) (suma + (kernel[1 + k][1 + l] * valor));
+                    }
+                }
+                imageMatriz[i][j] = (byte) suma;
+            }
+        }
+        mypicture = toBufferedImage();
+        return mypicture;
+    }
+
+    private BufferedImage adelgazamiento() {
         adelgazar();
 
         pictureFinal = toBufferedImage();
@@ -361,5 +430,8 @@ public class Filtros {
             imageMatriz = newMatrix;
         }
 
+    }
+
+    private Filtros() {
     }
 }

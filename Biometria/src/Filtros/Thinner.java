@@ -3,6 +3,10 @@ package Filtros;
 import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
 
+/**
+ * Clase encargada de realizar el algoritmo Zhang-Suen y de devolver el resultado en un BufferedImage.
+ */
+
 public class Thinner {
 
     private BufferedImage dst;
@@ -20,7 +24,7 @@ public class Thinner {
     public void thin(BufferedImage image) {
         //Zhang-Suen Thinning
         BufferedImage im = new BufferedImage(image.getWidth(),
-                image.getHeight(),BufferedImage.TYPE_BYTE_GRAY);
+                image.getHeight(), BufferedImage.TYPE_BYTE_GRAY);
         WritableRaster raster = im.getRaster();
 
         int h = image.getHeight();
