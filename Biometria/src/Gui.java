@@ -232,7 +232,7 @@ public class Gui extends JFrame {
                         int umbralSuperior = Integer.parseInt(s);
                         s = JOptionPane.showInputDialog(rootPane, "Introduzca el tamaño de la ventana inferior en pixeles", "Introduzca un valor");
                         int umbralInferior = Integer.parseInt(s);
-                        if (umbralInferior > 0 && umbralLateral >0 && umbralSuperior >0) {
+                        if (umbralInferior > 10 && umbralLateral > 10 && umbralSuperior > 10) {
                             ExtractorMinucias n = ExtractorMinucias.getInstance(Filtros.getInstance().getMypicture());
                             Filtros.getInstance().setPictureFinal(n.getMinucias(umbralLateral, umbralSuperior, umbralInferior));
                             JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));
@@ -242,7 +242,7 @@ public class Gui extends JFrame {
                             imagenFinPanel.revalidate();
                             imagenFinPanel.repaint();
                         }else
-                            JOptionPane.showMessageDialog(rootPane, "Todos los valores de los margenes deben ser mayores de 0", "Error al intentar obtener las minucias.", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(rootPane, "Todos los valores de los margenes deben ser mayores de 10", "Error al intentar obtener las minucias.", JOptionPane.ERROR_MESSAGE);
                     } catch (NumberFormatException e1) {
                         JOptionPane.showMessageDialog(rootPane, "El valor debe ser un valor entre 0 y el máximo tamaño de la imagen.", "Error al intentar obtener las minucias.", JOptionPane.ERROR_MESSAGE);
                     }

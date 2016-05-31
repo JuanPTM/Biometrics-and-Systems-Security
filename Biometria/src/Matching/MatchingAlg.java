@@ -123,24 +123,22 @@ public class MatchingAlg {
     }
 
     private boolean isInvalid(double d) {
-        return d >= 25;
+        return d >= 40;
     }
 
     public boolean compararHuellas() {
         LinkedList<Triangulo> trianGuard = loadTriangle();
         int triangulosPos = 0;
-        int triangulosTotal = 0;
 
         for (Triangulo triangle :
                 trianGuard) {
             if (isEqual(triangle)) {
                 triangulosPos++;
             }
-            triangulosTotal++;
         }
 
-        prob = (float) triangulosPos / triangulosTotal;
-        if (triangulosPos >= (triangulosTotal * 0.75)) {
+        prob = (float)  triangulosPos / triangles.size();
+        if ( prob >= 0.75) {
             return true;
         } else
             return false;
