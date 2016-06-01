@@ -1,5 +1,5 @@
 import Filtros.Filtros;
-import Filtros.Thinner;
+import Tratamiento.Thinner;
 import Matching.MatchingAlg;
 import Tratamiento.ExtractorMinucias;
 
