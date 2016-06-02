@@ -260,7 +260,10 @@ public class Gui extends JFrame {
                     m.compute();
 
                     if (m.compararHuellas()) {
-                        JOptionPane.showMessageDialog(rootPane, "Las huella corresponde a la almacenada("+m.probAcierto()*100+"%).", "Proceso completado", JOptionPane.INFORMATION_MESSAGE);
+                        if(m.probAcierto()>=0) {
+                            JOptionPane.showMessageDialog(rootPane, "Las huella corresponde a la almacenada(" + m.probAcierto() * 100 + "%).", "Proceso completado", JOptionPane.INFORMATION_MESSAGE);
+                        }else
+                            JOptionPane.showMessageDialog(rootPane, "No hay huella en el sistema con la que comparar.", "Proceso completado", JOptionPane.ERROR_MESSAGE);
                     } else
                         JOptionPane.showMessageDialog(rootPane, "La huella no corresponde con la almacenada("+m.probAcierto()*100+"%).", "Proceso completado", JOptionPane.ERROR_MESSAGE);
                     JLabel picLabel = new JLabel(new ImageIcon(Filtros.getInstance().getPictureFinal()));

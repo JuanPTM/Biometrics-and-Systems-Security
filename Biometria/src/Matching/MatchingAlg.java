@@ -83,7 +83,7 @@ public class MatchingAlg {
         }
     }
 
-    private LinkedList<Triangulo> loadTriangle() {
+    private LinkedList<Triangulo> loadTriangle() throws IOException {
         LinkedList<Triangulo> l;
         try {
             FileInputStream fin = new FileInputStream("Huella.ser");
@@ -92,7 +92,7 @@ public class MatchingAlg {
             ois.close();
             return l;
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IOException("No hay huella en el sistema con la que comparar.");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -127,7 +127,13 @@ public class MatchingAlg {
     }
 
     public boolean compararHuellas() {
-        LinkedList<Triangulo> trianGuard = loadTriangle();
+        LinkedList<Triangulo> trianGuard = null;
+        try {
+            trianGuard = loadTriangle();
+        } catch (IOException e) {
+            prob = -1;
+            return true;
+        }
         int triangulosPos = 0;
 
         for (Triangulo triangle :
@@ -216,7 +222,11 @@ public class MatchingAlg {
 
     private void test() {
         LinkedList<Triangulo> prob = triangles;
-        loadTriangle();
+        try {
+            loadTriangle();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         for (int i = 0; i < triangles.size() && (triangles.size() == prob.size()); i++) {
             System.out.println(triangles.get(i));

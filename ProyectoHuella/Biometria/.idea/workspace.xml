@@ -31,11 +31,10 @@
       <file leaf-file-name="Gui.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+            <state vertical-scroll-proportion="-9.620689">
+              <caret line="258" column="52" selection-start-line="258" selection-start-column="52" selection-end-line="258" selection-end-column="52" />
               <folding>
                 <element signature="method#init#0;class#Gui#0" expanded="false" />
-                <element signature="method#addListener#0;class#Gui#0" expanded="false" />
                 <element signature="class#1699:2807" expanded="false" />
                 <element signature="class#4026:4717" expanded="false" />
                 <element signature="class#4770:6178" expanded="false" />
@@ -73,8 +72,8 @@
       <file leaf-file-name="MatchingAlg.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Matching/MatchingAlg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.605364">
-              <caret line="132" column="33" selection-start-line="132" selection-start-column="33" selection-end-line="132" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.13154534">
+              <caret line="134" column="23" selection-start-line="134" selection-start-column="23" selection-end-line="134" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -154,8 +153,8 @@
         <option value="$PROJECT_DIR$/src/Tratamiento/ExtractorMinucias.java" />
         <option value="$PROJECT_DIR$/src/Matching/Arista.java" />
         <option value="$PROJECT_DIR$/src/Matching/Triangulo.java" />
-        <option value="$PROJECT_DIR$/src/Gui.java" />
         <option value="$PROJECT_DIR$/src/Gui.form" />
+        <option value="$PROJECT_DIR$/src/Gui.java" />
         <option value="$PROJECT_DIR$/src/Matching/MatchingAlg.java" />
       </list>
     </option>
@@ -219,8 +218,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -327,7 +327,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -825,11 +824,12 @@
       <workItem from="1464797586658" duration="180000" />
       <workItem from="1464823836780" duration="562000" />
       <workItem from="1464862479920" duration="1526000" />
+      <workItem from="1464865025051" duration="387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130834000" />
+    <option name="totallyTimeSpent" value="131221000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -949,7 +949,6 @@
           <caret line="217" column="18" selection-start-line="217" selection-start-column="18" selection-end-line="217" selection-end-column="18" />
           <folding>
             <element signature="method#init#0;class#Gui#0" expanded="false" />
-            <element signature="method#addListener#0;class#Gui#0" expanded="false" />
             <element signature="class#1699:2807" expanded="false" />
             <element signature="class#4026:4717" expanded="false" />
             <element signature="class#4770:6178" expanded="false" />
@@ -1051,7 +1050,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#init#0;class#Gui#0" expanded="false" />
-            <element signature="method#addListener#0;class#Gui#0" expanded="false" />
             <element signature="class#1699:2807" expanded="false" />
             <element signature="class#4026:4717" expanded="false" />
             <element signature="class#4770:6178" expanded="false" />
@@ -1110,7 +1108,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#init#0;class#Gui#0" expanded="false" />
-            <element signature="method#addListener#0;class#Gui#0" expanded="false" />
             <element signature="class#1699:2807" expanded="false" />
             <element signature="class#4026:4717" expanded="false" />
             <element signature="class#4770:6178" expanded="false" />
@@ -1162,7 +1159,6 @@
           <caret line="69" column="51" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
           <folding>
             <element signature="method#init#0;class#Gui#0" expanded="false" />
-            <element signature="method#addListener#0;class#Gui#0" expanded="false" />
             <element signature="class#1699:2807" expanded="false" />
             <element signature="class#4026:4717" expanded="false" />
             <element signature="class#4770:6178" expanded="false" />
@@ -1214,7 +1210,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#init#0;class#Gui#0" expanded="false" />
-            <element signature="method#addListener#0;class#Gui#0" expanded="false" />
             <element signature="class#1699:2807" expanded="false" />
             <element signature="class#4026:4717" expanded="false" />
             <element signature="class#4770:6178" expanded="false" />
@@ -1314,29 +1309,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Filtros/Filtros.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="143" column="30" selection-start-line="143" selection-start-column="30" selection-end-line="143" selection-end-column="30" />
-          <folding>
-            <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
-            <element signature="method#getGrisImg#0;class#Filtros#0" expanded="false" />
-            <element signature="method#loadImage#0;class#Filtros#0" expanded="false" />
-            <element signature="method#thresholdFilter#0;class#Filtros#0" expanded="false" />
-            <element signature="method#getEcualizar#0;class#Filtros#0" expanded="false" />
-            <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
-            <element signature="method#binaryFilterRuido#0;class#Filtros#0" expanded="false" />
-            <element signature="method#getHistogram#0;class#Filtros#0" expanded="false" />
-            <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
-            <element signature="method#toBufferedImage#0;class#Filtros#0" expanded="false" />
-            <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
-            <element signature="method#adelgazamiento#0;class#Filtros#0" expanded="false" />
-            <element signature="method#adelgazar#0;class#Filtros#0" expanded="false" />
-            <element signature="method#Filtros#0;class#Filtros#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1412,13 +1384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Huella.ser">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JAVA/Tratamiento">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1490,21 +1455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
-          <folding>
-            <element signature="method#init#0;class#Gui#0" expanded="false" />
-            <element signature="method#addListener#0;class#Gui#0" expanded="false" />
-            <element signature="class#1699:2807" expanded="false" />
-            <element signature="class#4026:4717" expanded="false" />
-            <element signature="class#4770:6178" expanded="false" />
-            <element signature="class#6228:6752" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tratamiento/ExtractorMinucias.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1537,19 +1487,56 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.620689">
+          <caret line="258" column="52" selection-start-line="258" selection-start-column="52" selection-end-line="258" selection-end-column="52" />
+          <folding>
+            <element signature="method#init#0;class#Gui#0" expanded="false" />
+            <element signature="class#1699:2807" expanded="false" />
+            <element signature="class#4026:4717" expanded="false" />
+            <element signature="class#4770:6178" expanded="false" />
+            <element signature="class#6228:6752" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Filtros/Filtros.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="143" column="30" selection-start-line="143" selection-start-column="30" selection-end-line="143" selection-end-column="30" />
+          <folding>
+            <element signature="method#getInstance#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getGrisImg#0;class#Filtros#0" expanded="false" />
+            <element signature="method#loadImage#0;class#Filtros#0" expanded="false" />
+            <element signature="method#thresholdFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getEcualizar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilter#0;class#Filtros#0" expanded="false" />
+            <element signature="method#binaryFilterRuido#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getHistogram#0;class#Filtros#0" expanded="false" />
+            <element signature="method#getLUT#0;class#Filtros#0" expanded="false" />
+            <element signature="method#toBufferedImage#0;class#Filtros#0" expanded="false" />
+            <element signature="method#smoothing#0;class#Filtros#0" expanded="false" />
+            <element signature="method#adelgazamiento#0;class#Filtros#0" expanded="false" />
+            <element signature="method#adelgazar#0;class#Filtros#0" expanded="false" />
+            <element signature="method#Filtros#0;class#Filtros#0" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Matching/MatchingAlg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.605364">
-          <caret line="132" column="33" selection-start-line="132" selection-start-column="33" selection-end-line="132" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.13154534">
+          <caret line="134" column="23" selection-start-line="134" selection-start-column="23" selection-end-line="134" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
