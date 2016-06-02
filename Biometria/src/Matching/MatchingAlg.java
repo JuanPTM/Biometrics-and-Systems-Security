@@ -137,8 +137,11 @@ public class MatchingAlg {
             }
         }
 
-        prob = (float)  triangulosPos / triangles.size();
-        if ( prob >= 0.75) {
+
+        prob = (float) triangulosPos / trianGuard.size();
+        if (trianGuard.size() == 0)
+            prob = 0;
+        if (prob >= 0.75) {
             return true;
         } else
             return false;
@@ -146,12 +149,13 @@ public class MatchingAlg {
 
     private boolean isEqual(Triangulo t) {
 
-        for (Triangulo trian :
-                triangles) {
-            if (compareAngulos(t, trian) || compareArea(t, trian)) {
-                return true;
+        if (!triangles.isEmpty())
+            for (Triangulo trian :
+                    triangles) {
+                if (compareAngulos(t, trian) || compareArea(t, trian)) {
+                    return true;
+                }
             }
-        }
         return false;
     }
 
