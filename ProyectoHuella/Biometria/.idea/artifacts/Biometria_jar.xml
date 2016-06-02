@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Biometria.jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Biometria_jar</output-path>
+    <root id="archive" name="Biometria.jar">
+      <element id="module-output" name="Biometria" />
+    </root>
+  </artifact>
+</component>
